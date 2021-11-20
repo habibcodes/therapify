@@ -1,8 +1,8 @@
 INSERT INTO
-appointments(practitioner_id, patient_id, date, time, symptom, treatment)
+uploaded_videos(practitioner_id, link)
 VALUES
-    (5, ),
-    (5, ),
-    (6, ),
-    (7, ),
-    (8, );
+    (5, 'https://www.youtube.com/watch?v=JiDaTi_iQrY'),
+    (5, 'https://www.youtube.com/watch?v=8pyanIgSJuw'),
+    (6, 'https://www.youtube.com/watch?v=JiDaTi_iQrY'),
+    (7, 'https://www.youtube.com/watch?v=8pyanIgSJuw'),
+    (8, 'https://www.youtube.com/watch?v=JiDaTi_iQrY');
