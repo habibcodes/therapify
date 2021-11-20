@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Navbar from './components/navbar'
 import Landing from './components/landing'
 import Dashboard from './components/dashboard'
+import Background from './components/background';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
     <div>
 
       <Navbar />
+      <Background />
       <Routes>
       <Route path="/" element={<Landing />}/>
       <Route path="/dashboard" element={<Dashboard />} />

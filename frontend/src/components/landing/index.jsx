@@ -1,8 +1,5 @@
 import './landing.css'
 
-import myVideo from './video.mov'
-
-
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
@@ -55,7 +52,7 @@ export default function Landing(){
     top: 0,
     bottom: 0,
     backgroundSize: 'cover',
-    backgroundPosition: 'center 40%',
+    backgroundPosition: 'center 30%',
   });
   
   const Image = styled('span')(({ theme }) => ({
@@ -93,16 +90,6 @@ export default function Landing(){
 return ( 
   <div>
 
-<video id="background-video" muted loop autoPlay>
-  
-    <source src={myVideo} type="video/mp4" />
-    
-</video>
-<div>
-  
-
-  
-</div>
 <Box class="mainBox" sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 300, width: '100%' }}>
       {images.map((image) => (
         <ImageButton
