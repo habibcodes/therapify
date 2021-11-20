@@ -1,10 +1,25 @@
+
 import './App.css';
+
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import Navbar from './components/navbar'
+import Landing from './components/landing'
+import Dashboard from './components/dashboard'
 
 function App() {
   return (
-    <div className='App'>
-      <h1>Therapify: You'll Never Walk Alone!</h1>
+    <BrowserRouter>
+    <div>
+
+      <Navbar />
+      <Routes>
+      <Route path="/" element={<Landing />}/>
+      <Route path="/dashboard" element={<Dashboard />} />
+
+      </Routes>
     </div>
+
+    </BrowserRouter>
   );
 }
 
