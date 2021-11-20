@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS practitioners CASCADE;
+DROP TABLE IF EXISTS patients CASCADE;
 
-CREATE TABLE practitioners(
+CREATE TABLE patients(
     id SERIAL PRIMARY KEY NOT NULL,
     user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
     age INTEGER NOT NULL,
-    symptom VARCHAR(255) NOT NULL
+    disease VARCHAR(255) NOT NULL
 );
