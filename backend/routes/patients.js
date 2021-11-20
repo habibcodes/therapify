@@ -8,11 +8,11 @@ patients.get('/', function (req, res, next) {
     { name: 'Bob2', email: 'bob2@email.com' },
   ];
 
-  res.json({});
+  res.json(patients);
 });
 patients.get('/:patient_id', function (req, res, next) {
-  const patient = [{ name: 'Bob', email: 'bob@email.com' }];
-  res.json({});
+  const patient = { name: 'Bob', email: 'bob@email.com' };
+  res.json(patient);
 });
 
 module.exports = patients;

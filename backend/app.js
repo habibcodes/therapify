@@ -3,6 +3,12 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
+// db Helper/---------
+const dbHelpers = require('./helpers/dbHelpers')(db);
+
+// import DB/---------
+const db = require('./db');
+
 const app = express();
 
 // Middleware/-----
