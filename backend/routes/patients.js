@@ -7,6 +7,7 @@ patients.get('/', function (req, res, next) {
     { name: 'Bob', email: 'bob@email.com' },
     { name: 'Bob2', email: 'bob2@email.com' },
   ];
+  // hit this with an axios request at the get/route
 
   res.json(patients);
 });
