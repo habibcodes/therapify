@@ -1,10 +1,25 @@
 .dashbox{
-display:flex;
+
 border-radius:10px;
+width: 30vw !important;
+height: 80vh;
 
 position:fixed;
-margin-top:3em;
-right: 1em;
-background-color:antiquewhite !important;
+
+left: 1em;
+
 
 }
+
+.clickbox{
+  margin-top:3em;
+  background-color:White;
+  
+  border-radius: 10px;
+  padding: 1em;
+  height: 80vh;
+  width: 60vw !important;
+  
+
+}
+

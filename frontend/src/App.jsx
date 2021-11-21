@@ -1,6 +1,6 @@
 
 import './App.css';
-
+import { CssBaseline } from '@mui/material';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Navbar from './components/navbar'
 import Landing from './components/landing'
@@ -10,8 +10,10 @@ import PracDash from './components/Prac-dashboard'
 
 function App() {
   return (
+    
     <BrowserRouter>
     <div>
+    <CssBaseline />
 
       <Navbar />
       <Background />

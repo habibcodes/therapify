@@ -1,4 +1,4 @@
-import CssBaseline from '@mui/material/CssBaseline';
+
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import './dashboard.css'
@@ -8,19 +8,25 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import Divider from '@mui/material/Divider';
-import DraftsIcon from '@mui/icons-material/Drafts';
 import ChatIcon from '@mui/icons-material/Chat';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import EventAvailableIcon from '@mui/icons-material/EventAvailable';
 import PersonSearchIcon from '@mui/icons-material/PersonSearch';
+import { Grid } from '@mui/material';
+import Card from './card'
+import useVisualMode from '../../hooks/useVisualMode';
+const EMPTY = "EMPTY"
+const CALENDAR = "CALENDAR"
 
 export default function Dashboard(){
+  const {mode, transition, back} = useVisualMode
 return (
   <div>
   
-  <Container maxWidth="sm">
-  <Box className="dashbox" sx={{ maxWidth: 360, bgcolor: 'background.paper' }}>
+
+  <Grid container spacing={1}>
+  <Grid item xs>
+  <Box className="dashbox" sx={{ maxWidth: 300, bgcolor: 'background.paper' }}>
       <nav aria-label="main mailbox folders">
         <List>
           <ListItem>
@@ -68,12 +74,15 @@ return (
       </nav>
      
     </Box>
-    <div>
-      
-    </div>
+    </Grid>
+    <Grid item lg>
+    <Card/>
+  </Grid>
+  
+      </Grid>
   
   
-  </Container>
+
   </div>
 )
 }
