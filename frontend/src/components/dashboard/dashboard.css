@@ -1,0 +1,10 @@
+.dashbox{
+display:flex;
+border-radius:10px;
+
+position:fixed;
+margin-top:3em;
+right: 1em;
+background-color:antiquewhite !important;
+
+}
