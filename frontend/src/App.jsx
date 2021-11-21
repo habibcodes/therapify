@@ -6,6 +6,7 @@ import Navbar from './components/navbar'
 import Landing from './components/landing'
 import Dashboard from './components/dashboard'
 import Background from './components/background';
+import PracDash from './components/Prac-dashboard'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Routes>
       <Route path="/" element={<Landing />}/>
       <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/pracdash" element={<PracDash/>} />
 
       </Routes>
     </div>

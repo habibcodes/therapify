@@ -12,6 +12,7 @@ export default function Landing(){
     {
       
       title: 'Patient',
+      redirect: '/dashboard',
                   
       width: '50%',
     
@@ -19,6 +20,7 @@ export default function Landing(){
     {
      
       title: 'Practitioner',
+      redirect: '/pracdash',
       width: '50%',
     },
     
@@ -98,7 +100,7 @@ return (
           style={{
             width: image.width,
           }}
-          component={Link} to="/dashboard"
+          component={Link} to={image.redirect}
         >
           <ImageSrc style={{ backgroundImage: `url(${image.url})` }} />
           <ImageBackdrop className="MuiImageBackdrop-root" />

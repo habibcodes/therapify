@@ -1,19 +1,17 @@
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-import './dashboard.css'
+import './prac-dashboard.css'
 import VideocamIcon from '@mui/icons-material/Videocam';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import Divider from '@mui/material/Divider';
-import DraftsIcon from '@mui/icons-material/Drafts';
 import ChatIcon from '@mui/icons-material/Chat';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import EventAvailableIcon from '@mui/icons-material/EventAvailable';
-import PersonSearchIcon from '@mui/icons-material/PersonSearch';
+import AssignmentIndIcon from '@mui/icons-material/AssignmentInd';
 
 export default function Dashboard(){
 return (
@@ -42,9 +40,9 @@ return (
           <ListItem>
             <ListItemButton>
               <ListItemIcon>
-                <PersonSearchIcon style={{fill: "black"}}/>
+                <AssignmentIndIcon style={{fill: "black"}}/>
               </ListItemIcon>
-              <ListItemText primary="Practitioners" />
+              <ListItemText primary="Patient List" />
             </ListItemButton>
           </ListItem>
           <ListItem>
