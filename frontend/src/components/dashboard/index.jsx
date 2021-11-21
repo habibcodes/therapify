@@ -17,12 +17,14 @@ import CalendarCard from './CalendarCard'
 import CompletedCard from './CompletedCard'
 import PracCard from './PracCard'
 import VideoCard from './VideoCard'
+import ChatCard from './ChatCard'
 import useVisualMode from '../../hooks/useVisualMode';
 const EMPTY = "EMPTY"
 const CALENDAR = "CALENDAR"
 const COMPLETED = "COMPLETED"
 const PRAC = "PRAC"
 const VIDEO = "VIDEO"
+const CHAT = "CHAT"
 
 export default function Dashboard(){
   const {mode, transition, back} = useVisualMode(EMPTY)
@@ -68,7 +70,7 @@ return (
             </ListItemButton>
           </ListItem>
           <ListItem>
-            <ListItemButton>
+            <ListItemButton onClick={()=> transition(mode === CHAT? EMPTY : CHAT)}>
               <ListItemIcon>
                 <ChatIcon style={{fill: "black"}}/>
               </ListItemIcon>
@@ -93,6 +95,9 @@ return (
     )}
     {mode === VIDEO && (
     <VideoCard/>
+    )}
+     {mode === CHAT && (
+    <ChatCard/>
     )}
 
   </Grid>
