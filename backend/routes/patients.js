@@ -12,6 +12,7 @@ patients.get('/', function (req, res, next) {
 });
 patients.get('/:patient_id', function (req, res, next) {
   const patient = { name: 'Bob', email: 'bob@email.com' };
+
   res.json(patient);
 });
 
