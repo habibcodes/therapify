@@ -13,13 +13,19 @@ import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import EventAvailableIcon from '@mui/icons-material/EventAvailable';
 import PersonSearchIcon from '@mui/icons-material/PersonSearch';
 import { Grid } from '@mui/material';
-import Card from './card'
+import CalendarCard from './CalendarCard'
+import CompletedCard from './CompletedCard'
+import PracCard from './PracCard'
+import VideoCard from './VideoCard'
 import useVisualMode from '../../hooks/useVisualMode';
 const EMPTY = "EMPTY"
 const CALENDAR = "CALENDAR"
+const COMPLETED = "COMPLETED"
+const PRAC = "PRAC"
+const VIDEO = "VIDEO"
 
 export default function Dashboard(){
-  const {mode, transition, back} = useVisualMode
+  const {mode, transition, back} = useVisualMode(EMPTY)
 return (
   <div>
   
@@ -30,7 +36,7 @@ return (
       <nav aria-label="main mailbox folders">
         <List>
           <ListItem>
-            <ListItemButton>
+            <ListItemButton onClick={() => transition(mode === CALENDAR? EMPTY : CALENDAR)} >
               <ListItemIcon>
                 <CalendarTodayIcon style={{fill: "black"}}/>
               </ListItemIcon>
@@ -38,7 +44,7 @@ return (
             </ListItemButton>
           </ListItem>
           <ListItem>
-            <ListItemButton>
+            <ListItemButton onClick={()=> transition(mode === COMPLETED? EMPTY : COMPLETED)} >
               <ListItemIcon>
                 <EventAvailableIcon style={{fill: "black"}}/>
               </ListItemIcon>
@@ -46,7 +52,7 @@ return (
             </ListItemButton>
           </ListItem>
           <ListItem>
-            <ListItemButton>
+            <ListItemButton onClick={()=> transition(mode === PRAC? EMPTY : PRAC)} >
               <ListItemIcon>
                 <PersonSearchIcon style={{fill: "black"}}/>
               </ListItemIcon>
@@ -54,7 +60,7 @@ return (
             </ListItemButton>
           </ListItem>
           <ListItem>
-            <ListItemButton>
+            <ListItemButton onClick={()=> transition(mode === VIDEO? EMPTY : VIDEO)} >
               <ListItemIcon>
                 <VideocamIcon style={{fill: "darkred"}}/>
               </ListItemIcon>
@@ -76,7 +82,19 @@ return (
     </Box>
     </Grid>
     <Grid item lg>
-    <Card/>
+    {mode === CALENDAR && (
+    <CalendarCard/>
+    )}
+    {mode === COMPLETED && (
+    <CompletedCard/>
+    )}
+    {mode === PRAC && (
+    <PracCard/>
+    )}
+    {mode === VIDEO && (
+    <VideoCard/>
+    )}
+
   </Grid>
   
       </Grid>
