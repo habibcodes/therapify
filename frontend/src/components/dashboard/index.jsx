@@ -1,6 +1,4 @@
-
 import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
 import './dashboard.css'
 import VideocamIcon from '@mui/icons-material/Videocam';
 import List from '@mui/material/List';
@@ -27,7 +25,7 @@ const VIDEO = "VIDEO"
 const CHAT = "CHAT"
 
 export default function Dashboard(){
-  const {mode, transition, back} = useVisualMode(EMPTY)
+  const {mode, transition } = useVisualMode(EMPTY)
 return (
   <div>
   
