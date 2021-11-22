@@ -1,10 +1,54 @@
 .dashbox{
-display:flex;
+
 border-radius:10px;
+width: 25vw !important;
+height: 80vh;
 
 position:fixed;
-margin-top:3em;
-right: 1em;
-background-color:antiquewhite !important;
 
+left: 1em;
+
+
+}
+
+.clickbox{
+  margin-top:3em;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-right: 2em;
+  
+  
+  border-radius: 10px;
+  padding: 1em;
+  height: 80vh;
+  width: 60vw !important;
+  
+
+}
+
+@media only screen and (max-width: 710px) {
+  .dashbox{
+    height:auto !important;
+    max-width:100px !important;
+    padding-left:0.5em;
+  
+    
+    
+  }
+  .itemtext {
+display:none ;
+  }
+  .clickbox{
+    width: 70vw !important;
+    margin-right:1em;
+  }
+  .divider{
+    width:70%;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .clickbox{
+    margin-right: 0.1em;
+
+  }
+  
 }
