@@ -1,8 +1,7 @@
 module.exports = (db) => {
   const getPractitioners = (email) => {
     const query = {
-      text: `SELECT * FROM users WHERE email = $1`,
-      values: [email],
+      text: `SELECT * FROM users`,
     };
     console.log(query);
 
