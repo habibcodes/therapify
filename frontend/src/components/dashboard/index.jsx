@@ -10,13 +10,14 @@ import ChatIcon from '@mui/icons-material/Chat';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import EventAvailableIcon from '@mui/icons-material/EventAvailable';
 import PersonSearchIcon from '@mui/icons-material/PersonSearch';
-import { Grid } from '@mui/material';
+import { Grid, Divider } from '@mui/material';
 import CalendarCard from './CalendarCard'
 import CompletedCard from './CompletedCard'
 import PracCard from './PracCard'
 import VideoCard from './VideoCard'
 import ChatCard from './ChatCard'
 import useVisualMode from '../../hooks/useVisualMode';
+import { CssBaseline } from '@mui/material';
 const EMPTY = "EMPTY"
 const CALENDAR = "CALENDAR"
 const COMPLETED = "COMPLETED"
@@ -29,7 +30,7 @@ export default function Dashboard(){
 return (
   <div>
   
-
+ 
   <Grid container spacing={1}>
   <Grid item xs>
   <Box className="dashbox" sx={{ maxWidth: 300, bgcolor: 'background.paper' }}>
@@ -40,39 +41,43 @@ return (
               <ListItemIcon>
                 <CalendarTodayIcon style={{fill: "black"}}/>
               </ListItemIcon>
-              <ListItemText primary="Upcoming Sessions" />
+              <ListItemText className="itemtext" primary="Upcoming Sessions" />
             </ListItemButton>
           </ListItem>
+          <Divider className="divider" />
           <ListItem>
             <ListItemButton onClick={()=> transition(mode === COMPLETED? EMPTY : COMPLETED)} >
               <ListItemIcon>
                 <EventAvailableIcon style={{fill: "black"}}/>
               </ListItemIcon>
-              <ListItemText primary="Completed Sessions" />
+              <ListItemText className="itemtext" primary="Completed Sessions" />
             </ListItemButton>
           </ListItem>
+          <Divider className="divider" />
           <ListItem>
             <ListItemButton onClick={()=> transition(mode === PRAC? EMPTY : PRAC)} >
               <ListItemIcon>
                 <PersonSearchIcon style={{fill: "black"}}/>
               </ListItemIcon>
-              <ListItemText primary="Practitioners" />
+              <ListItemText className="itemtext" primary="Practitioners" />
             </ListItemButton>
           </ListItem>
+          <Divider className="divider"/>
           <ListItem>
             <ListItemButton onClick={()=> transition(mode === VIDEO? EMPTY : VIDEO)} >
               <ListItemIcon>
                 <VideocamIcon style={{fill: "darkred"}}/>
               </ListItemIcon>
-              <ListItemText primary="Video Session" />
+              <ListItemText className="itemtext" primary="Video Session" />
             </ListItemButton>
           </ListItem>
+          <Divider className="divider"/>
           <ListItem>
             <ListItemButton onClick={()=> transition(mode === CHAT? EMPTY : CHAT)}>
               <ListItemIcon>
                 <ChatIcon style={{fill: "black"}}/>
               </ListItemIcon>
-              <ListItemText primary="Chat Session" />
+              <ListItemText className="itemtext" primary="Chat Session" />
             </ListItemButton>
           </ListItem>
           

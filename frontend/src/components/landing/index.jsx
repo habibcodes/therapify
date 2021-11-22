@@ -92,7 +92,7 @@ export default function Landing(){
 return ( 
   <div>
 
-<Box class="mainBox" sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 300, width: '100%' }}>
+<Box className="mainBox" sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 300, width: '100%' }}>
       {images.map((image) => (
         <ImageButton
           focusRipple

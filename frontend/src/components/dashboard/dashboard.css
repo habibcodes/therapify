@@ -1,7 +1,7 @@
 .dashbox{
 
 border-radius:10px;
-width: 30vw !important;
+width: 25vw !important;
 height: 80vh;
 
 position:fixed;
@@ -25,3 +25,30 @@ left: 1em;
 
 }
 
+@media only screen and (max-width: 710px) {
+  .dashbox{
+    height:auto !important;
+    max-width:100px !important;
+    padding-left:0.5em;
+  
+    
+    
+  }
+  .itemtext {
+display:none ;
+  }
+  .clickbox{
+    width: 70vw !important;
+    margin-right:1em;
+  }
+  .divider{
+    width:70%;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .clickbox{
+    margin-right: 0.1em;
+
+  }
+  
+}
