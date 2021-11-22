@@ -45,7 +45,20 @@ const io = require('socket.io')(server, {
 //
 
 io.on('connection', (socket) => {
-  //
+  // local caller
+  socket.emit('me', socket.id);
+  // disconnect handler
+  socket.on('disconnet', () => {
+    socket.broadcast.emit('callend');
+  });
+  // calluser handler
+  socket.on('calluser', ({ userToCall, signalData, from, name }) => {
+    io.to(userToCall).emit('calluser', { signal: signalData, from, name });
+  });
+  // answer call handler
+  socket.on('answerCall', (data) => {
+    io.to(data.to).emit('callaccepted', data.signal);
+  });
 });
 
 module.exports = app;
