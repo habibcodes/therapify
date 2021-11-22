@@ -6,7 +6,7 @@ module.exports = (dbHelpers) => {
   /* Access all practitioners */
   router.get("/", function (req, res, next) {
     dbHelpers
-      .getPractitioners("mario@nintendo.com")
+      .getPractitioners()
       // hit this with an axios request at the get/route
       .then((result) => res.json(result));
   });
