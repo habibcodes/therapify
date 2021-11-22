@@ -17,7 +17,7 @@ import PracCard from './PracCard'
 import VideoCard from './VideoCard'
 import ChatCard from './ChatCard'
 import useVisualMode from '../../hooks/useVisualMode';
-import { CssBaseline } from '@mui/material';
+
 const EMPTY = "EMPTY"
 const CALENDAR = "CALENDAR"
 const COMPLETED = "COMPLETED"
