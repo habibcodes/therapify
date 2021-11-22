@@ -1,16 +1,16 @@
+// server imports
 const express = require('express');
+const app = express();
 const path = require('path');
+const server = require('http').createServer(app);
+// db imports
+const db = require('./db');
+// middleware imports
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-// cors/---------
 const cors = require('cors');
-// db Helper/---------
+// helper imports //
 // const dbHelpers = require('./db/helpers/dbHelpers')(db);
-
-// import DB/---------
-const db = require('./db');
-
-const app = express();
 
 // Middleware/-----
 // use cors before your routes are set up/-----
@@ -31,5 +31,21 @@ app.use('/api/practitioners', practitionersRouter);
 app.get('/api/authenticate');
 app.post('/api/login');
 app.post('/api/register');
+
+// webRTC Section //----------------------------------------------------------------
+
+// socket.io config
+const io = require('socket.io')(server, {
+  cors: {
+    origin: '*',
+    methods: ['GET', 'POST'],
+  },
+});
+
+//
+
+io.on('connection', (socket) => {
+  //
+});
 
 module.exports = app;
