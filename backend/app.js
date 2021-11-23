@@ -4,11 +4,12 @@ const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 // cors/---------
 const cors = require("cors");
-// db Helper/---------
-// const dbHelpers = require('./helpers/dbHelpers')(db);
 
 // import DB/---------
 const db = require("./db");
+
+// db Helper/---------
+const dbHelpers = require("./db/helpers/dbHelpers")(db);
 
 const app = express();
 
@@ -25,8 +26,8 @@ app.use(express.static(path.join(__dirname, "public")));
 const patientsRouter = require("./routes/patients");
 const practitionersRouter = require("./routes/practitioners");
 
-app.use("/api/patients", patientsRouter);
-app.use("/api/practitioners", practitionersRouter);
+app.use("/api/patients", patientsRouter(dbHelpers));
+app.use("/api/practitioners", practitionersRouter(dbHelpers));
 
 app.get("/api/authenticate");
 app.post("/api/login");

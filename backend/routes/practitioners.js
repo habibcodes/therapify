@@ -1,17 +1,18 @@
-const express = require('express');
-const practitioners = express.Router();
+const express = require("express");
+const router = express.Router();
 
-/* Access all practitioners */
-practitioners.get('/', function (req, res, next) {
-  const practitioners = [
-    { name: 'Dr. Alpha', email: 'alpha@doctor.com' },
-    { name: 'Dr. Beta', email: 'beta@doctor.com' },
-  ];
-  res.json(practitioners);
-});
-practitioners.get('/:practitioner_id', function (req, res, next) {
-  const practitioner = { name: 'Dr.Alpha', email: 'alpha@doctor.com' };
-  res.json(practitioner);
-});
-
-module.exports = practitioners;
+module.exports = (dbHelpers) => {
+  console.log(dbHelpers);
+  /* Access all practitioners */
+  router.get("/", function (req, res, next) {
+    dbHelpers
+      .getPractitioners()
+      // hit this with an axios request at the get/route
+      .then((result) => res.json(result));
+  });
+  router.get("/:practitioner_id", function (req, res, next) {
+    const practitioners = { name: "Bob", email: "bob@email.com" };
+    res.json(practitioners);
+  });
+  return router;
+};
