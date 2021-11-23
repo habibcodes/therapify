@@ -17,7 +17,7 @@ import CompletedCard from './CompletedCard'
 import PracCard from './PracCard'
 import VideoCard from './VideoCard'
 import ChatCard from './ChatCard'
-import YoutubeCard from './YoutubeCard'
+
 import useVisualMode from '../../hooks/useVisualMode';
 
 const EMPTY = "EMPTY"
@@ -26,7 +26,7 @@ const COMPLETED = "COMPLETED"
 const PRAC = "PRAC"
 const VIDEO = "VIDEO"
 const CHAT = "CHAT"
-const YOUTUBE = "YOUTUBE"
+
 
 export default function Dashboard(){
   const {mode, transition } = useVisualMode(EMPTY)
@@ -83,15 +83,7 @@ return (
               <ListItemText className="itemtext" primary="Chat Session" />
             </ListItemButton>
           </ListItem>
-          <Divider className="divider"/>
-          <ListItem>
-            <ListItemButton onClick={()=> transition(mode === YOUTUBE? EMPTY : YOUTUBE)}>
-              <ListItemIcon>
-                <OndemandVideoIcon style={{fill: "black"}}/>
-              </ListItemIcon>
-              <ListItemText className="itemtext" primary="Content Search" />
-            </ListItemButton>
-          </ListItem>
+         
           
         </List>
       </nav>
@@ -114,9 +106,7 @@ return (
      {mode === CHAT && (
     <ChatCard/>
     )}
-     {mode === YOUTUBE && (
-    <YoutubeCard/>
-    )}
+    
 
   </Grid>
   

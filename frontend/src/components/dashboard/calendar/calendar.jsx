@@ -20,9 +20,6 @@ import {
   EditingState
 } from "@devexpress/dx-react-scheduler";
 
-import randomColor from 'randomcolor'
-
-
 import { owners, appointments } from './appointments';
 import { useEffect, useState } from "react";
 
