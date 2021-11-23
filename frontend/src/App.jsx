@@ -1,6 +1,5 @@
 
 import './App.css';
-import { CssBaseline } from '@mui/material';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/navbar'
 import Landing from './components/landing'
@@ -13,7 +12,7 @@ function App() {
     
     <BrowserRouter>
     <div>
-    <CssBaseline />
+    
 
       <Navbar />
       <Background />

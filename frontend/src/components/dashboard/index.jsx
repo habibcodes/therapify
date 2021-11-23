@@ -10,7 +10,7 @@ import ChatIcon from '@mui/icons-material/Chat';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import EventAvailableIcon from '@mui/icons-material/EventAvailable';
 import PersonSearchIcon from '@mui/icons-material/PersonSearch';
-import { Grid, Divider } from '@mui/material';
+import { Container, Grid, Divider } from '@mui/material';
 import CalendarCard from './CalendarCard'
 import CompletedCard from './CompletedCard'
 import PracCard from './PracCard'
@@ -30,10 +30,10 @@ export default function Dashboard(){
 return (
   <div>
   
- 
+ <Container>
   <Grid container spacing={1}>
   <Grid item xs>
-  <Box className="dashbox" sx={{ maxWidth: 300, bgcolor: 'background.paper' }}>
+  <Box className="dashbox">
       <nav aria-label="main mailbox folders">
         <List>
           <ListItem>
@@ -106,6 +106,7 @@ return (
   </Grid>
   
       </Grid>
+      </Container>
   
   
 

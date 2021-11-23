@@ -1,15 +1,16 @@
 
 import { Box } from "@mui/system"
+import Calendar from './calendar/calendar'
 
 export default function Card() {
 
   return (
     <div>
         
-    <Box className="clickbox" sx={{ bgcolor: 'background.paper' }}>
-    <div>
-      Calendar goes here
-      </div>
+    <Box className="clickbox" >
+   
+      <Calendar />
+      
      
       </Box>
       <div>
