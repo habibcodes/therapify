@@ -1,4 +1,5 @@
-import './calendar.css'
+import axios from 'axios'
+import randomColor from 'randomcolor'
 
 import {
   Scheduler,
@@ -19,16 +20,24 @@ import {
   EditingState
 } from "@devexpress/dx-react-scheduler";
 
-import { owners, appointments } from './appointments';
+import { appointments } from './appointments';
 import { useEffect, useState } from "react";
 
 
 export default function SchedulerExample() {
   const [appointmentData, setAppointmentData] = useState(appointments);
+  const [practitioners, setPractitioners] = useState([])
 
 
   useEffect(() => {
     setAppointmentData(appointments);
+    axios.get(`/api/practitioners`)
+      .then(res => {
+        const pracData = res.data;
+        console.log(pracData)
+        const filteredPracs = pracData.map(person => ({id: Math.random(100), text: `${person.first_name} ${person.last_name}`, color: randomColor() }));
+        setPractitioners(filteredPracs);
+      })
 
     
     }, []);
@@ -42,7 +51,7 @@ export default function SchedulerExample() {
   const resources = [{
     fieldName: 'ownerId',
     title: 'Select Practitioner',
-    instances: owners,
+    instances: practitioners,
   }];
 
   const commitChanges = ({ added, changed, deleted }) => {
