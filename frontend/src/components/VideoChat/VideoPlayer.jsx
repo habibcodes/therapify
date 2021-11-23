@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
-import { Grid, Typography, Paper } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { Grid, Typography, Paper, makeStyles } from '@material-ui/core';
 
-import { SocketContext } from '../../SocketContext';
+import { SocketContext } from '../../Context';
 
 // these are the styles for the video player size and how it should appear
 // across desktop and mobile devices
@@ -36,6 +35,7 @@ const VideoPlayer = () => {
     stream,
     call,
   } = useContext(SocketContext);
+
   const classes = useStyles();
 
   return (

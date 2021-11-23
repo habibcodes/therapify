@@ -11,8 +11,8 @@ import { Typography, AppBar } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 // videoChat imports
 import VideoPlayer from './components/VideoChat/VideoPlayer';
+import Sidebar from './components/VideoChat/Sidebar';
 import Notifications from './components/VideoChat/Notifications';
-import Options from './components/VideoChat/Options';
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -64,10 +64,10 @@ function App() {
         </AppBar>
         {/* vidPlayer */}
         <VideoPlayer />
-        {/* options -->notifications */}
-        <Options>
+        {/* Sidebar -->notifications */}
+        <Sidebar>
           <Notifications />
-        </Options>
+        </Sidebar>
         {/* webRTC */}
       </div>
     </BrowserRouter>

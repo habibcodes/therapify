@@ -5,20 +5,21 @@ import Peer from 'simple-peer';
 
 const SocketContext = createContext();
 
-const socket = io('http://localhost:5000');
+// const socket = io('http://localhost:5000');
+const socket = io();
 
 const ContextProvider = ({ children }) => {
-  // hold stream state
-  const [stream, setStream] = useState();
-  // set the local feed 'me' state
-  const [me, setMe] = useState('');
-  // sets call state
-  const [call, setCall] = useState({});
   // sets state for callAccepted and callEnded
   const [callAccepted, setCallAccepted] = useState(false);
   const [callEnded, setCallEnded] = useState(false);
+  // hold stream state
+  const [stream, setStream] = useState();
   // sets state for name of caller to local
   const [name, setName] = useState('');
+  // sets call state
+  const [call, setCall] = useState({});
+  // set the local feed 'me' state
+  const [me, setMe] = useState('');
 
   // reference for local video
   const myVideo = useRef();
@@ -68,7 +69,7 @@ const ContextProvider = ({ children }) => {
 
   // logic for when local computer makes the call to other user
   const callUser = (id) => {
-    //
+    console.log('from line 72');
     const peer = new Peer({ initiator: true, trickle: false, stream });
 
     peer.on('signal', (data) => {
