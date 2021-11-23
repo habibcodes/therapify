@@ -2,15 +2,14 @@
 import { createContext, useState, useRef, useEffect } from 'react';
 import { io } from 'socket.io-client';
 import Peer from 'simple-peer';
-import { setMaxListeners } from '../../backend/app';
 
 const SocketContext = createContext();
 
-const socket = io('htt://localhost:5000');
+const socket = io('http://localhost:5000');
 
 const ContextProvider = ({ children }) => {
   // hold stream state
-  const [stream, setStream] = useState(null);
+  const [stream, setStream] = useState();
   // set the local feed 'me' state
   const [me, setMe] = useState('');
   // sets call state
@@ -39,11 +38,11 @@ const ContextProvider = ({ children }) => {
         myVideo.current.srcObject = currentStream;
       });
     // listens to the backend 'me' emitter
-    socket.on('me', (id) => setMaxListeners(id));
+    socket.on('me', (id) => setMe(id));
 
     // listens for the 'calluser' emitter
-    socket.on('calluser', ({ from, name: callerName, signal }) => {
-      setCall({ isReceivedCall: true, from, name: callerName, signal });
+    socket.on('callUser', ({ from, name: callerName, signal }) => {
+      setCall({ isReceivingCall: true, from, name: callerName, signal });
     });
   }, []);
 
@@ -54,7 +53,7 @@ const ContextProvider = ({ children }) => {
     const peer = new Peer({ initiator: false, trickle: false, stream });
 
     peer.on('signal', (data) => {
-      socket.emit('answercall', { signal: data, to: call.from });
+      socket.emit('answerCall', { signal: data, to: call.from });
     });
     // other user's stream
     peer.on('stream', (currentStream) => {
@@ -73,7 +72,7 @@ const ContextProvider = ({ children }) => {
     const peer = new Peer({ initiator: true, trickle: false, stream });
 
     peer.on('signal', (data) => {
-      socket.emit('calluser', {
+      socket.emit('callUser', {
         userToCall: id,
         signalData: data,
         from: me,
@@ -85,7 +84,7 @@ const ContextProvider = ({ children }) => {
       userVideo.current.srcObject = currentStream;
     });
     // can accept/not accept call, refers to 'callaccepted' emitter
-    socket.on('callaccepted', (signal) => {
+    socket.on('callAccepted', (signal) => {
       setCallAccepted(true);
       // set peer to the signal coming in
       peer.signal(signal);
@@ -108,6 +107,7 @@ const ContextProvider = ({ children }) => {
       value={{
         me,
         call,
+        name,
         stream,
         myVideo,
         userVideo,

@@ -14,7 +14,6 @@ const dbHelpers = require('./db/helpers/dbHelpers')(db);
 
 // Middleware/-----
 // use cors before your routes are set up/-----
-app.use(cors());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -40,21 +39,22 @@ const io = require('socket.io')(server, {
     methods: ['GET', 'POST'],
   },
 });
+app.use(cors());
 
 io.on('connection', (socket) => {
   // local caller
   socket.emit('me', socket.id);
   // disconnect handler
-  socket.on('disconnet', () => {
-    socket.broadcast.emit('callend');
+  socket.on('disconnect', () => {
+    socket.broadcast.emit('callEnded');
   });
   // calluser handler
-  socket.on('calluser', ({ userToCall, signalData, from, name }) => {
-    io.to(userToCall).emit('calluser', { signal: signalData, from, name });
+  socket.on('callUser', ({ userToCall, signalData, from, name }) => {
+    io.to(userToCall).emit('callUser', { signal: signalData, from, name });
   });
   // answer call handler
   socket.on('answerCall', (data) => {
-    io.to(data.to).emit('callaccepted', data.signal);
+    io.to(data.to).emit('callAccepted', data.signal);
   });
 });
 
