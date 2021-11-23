@@ -1,5 +1,6 @@
 import './calendar.css'
 
+
 import {
   Scheduler,
   DayView,
@@ -8,6 +9,7 @@ import {
   AppointmentTooltip,
   ViewSwitcher,
   Toolbar,
+  Resources,
   DateNavigator,
   AppointmentForm
 } from "@devexpress/dx-react-scheduler-material-ui";
@@ -18,26 +20,38 @@ import {
   EditingState
 } from "@devexpress/dx-react-scheduler";
 
-import { appointments } from './appointments';
+import randomColor from 'randomcolor'
+
+
+import { owners, appointments } from './appointments';
 import { useEffect, useState } from "react";
+
 
 export default function SchedulerExample() {
   const [appointmentData, setAppointmentData] = useState(appointments);
 
+
   useEffect(() => {
     setAppointmentData(appointments);
-  }, []);
 
+    
+    }, []);
+    
+  
+
+ 
   const TimeTableCell = ({ onDoubleClick, ...restProps }) => {
     return <DayView.TimeTableCell onClick={onDoubleClick} {...restProps} />;
   };
-  const mapAppointmentData = appointment => ({
-    id: appointment.id,
-   
-    title: appointment.summary,
-  });
+  const resources = [{
+    fieldName: 'ownerId',
+    title: 'Select Practitioner',
+    instances: owners,
+  }];
 
   const commitChanges = ({ added, changed, deleted }) => {
+ 
+    
   
     let data = appointmentData;
     if (added) {
@@ -59,6 +73,7 @@ export default function SchedulerExample() {
   };
 
   return (
+  
     <Scheduler height= "auto" data={appointmentData}>
       <ViewState defaultCurrentDate={new Date()} />
       <DayView startDayHour={8} endDayHour={17} cellDuration={60} timeTableCellComponent={TimeTableCell} />
@@ -68,6 +83,8 @@ export default function SchedulerExample() {
       <EditingState onCommitChanges={(e) => commitChanges(e)} />
       <IntegratedEditing />
       <Appointments />
+      <Resources
+      data={resources} />
       <Toolbar />
       <DateNavigator />
       

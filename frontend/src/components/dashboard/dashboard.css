@@ -30,6 +30,14 @@ left: 1em;
 
 }
 
+.practitioner{
+  color:black !important;
+  background-color:white;
+  border-radius: 5px;
+  padding: 1em;
+  box-shadow: 5px 5px 10;
+}
+
 
 
 
