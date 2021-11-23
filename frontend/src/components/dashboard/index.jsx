@@ -94,7 +94,7 @@ return (
     </Grid>
     <Grid item lg>
     {mode === CALENDAR && (
-    <CalendarCard/>
+    <CalendarCard className="calendar-card"/>
     )}
     {mode === COMPLETED && (
     <CompletedCard/>
