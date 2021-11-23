@@ -2,7 +2,7 @@
   display:flex;
 margin-top: 3em;
 border-radius:10px;
-width: 25vw;
+width: 22vw;
 height: 80vh;
 max-width: 300px !important;
 
@@ -69,6 +69,7 @@ display:none ;
 
   .dashbox{
     left:0;
+    
     
     
   }
