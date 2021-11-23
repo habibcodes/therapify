@@ -34,7 +34,7 @@ return (
   <div>
   
  <Container>
-  <Grid container spacing={1}>
+  <Grid container >
   <Grid item xs>
   <Box className="dashbox">
       <nav aria-label="main mailbox folders">

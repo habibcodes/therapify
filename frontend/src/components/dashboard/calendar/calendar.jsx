@@ -1,5 +1,4 @@
 import './calendar.css'
-import { CssBaseline } from '@mui/material';
 
 import {
   Scheduler,
@@ -71,7 +70,7 @@ export default function SchedulerExample() {
 
   return (
   
-    <Scheduler data={appointmentData}>
+    <Scheduler className="scheduler" data={appointmentData}>
       
       <ViewState defaultCurrentDate={new Date()} />
       <DayView startDayHour={8} endDayHour={17} cellDuration={60} timeTableCellComponent={TimeTableCell} />
