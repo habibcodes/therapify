@@ -25,15 +25,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 const patientsRouter = require('./routes/patients');
 const practitionersRouter = require('./routes/practitioners');
 
-app.use('/api/patients', patientsRouter);
-app.use('/api/practitioners', practitionersRouter);
+app.use('/api/patients', patientsRouter(dbHelpers));
+app.use('/api/practitioners', practitionersRouter(dbHelpers));
 
 app.get('/api/authenticate');
 app.post('/api/login');
 app.post('/api/register');
 
 // webRTC Section //----------------------------------------------------------------
-
 // socket.io config
 const io = require('socket.io')(server, {
   cors: {
@@ -41,9 +40,6 @@ const io = require('socket.io')(server, {
     methods: ['GET', 'POST'],
   },
 });
-
-app.use("/api/patients", patientsRouter(dbHelpers));
-app.use("/api/practitioners", practitionersRouter(dbHelpers));
 
 io.on('connection', (socket) => {
   // local caller
