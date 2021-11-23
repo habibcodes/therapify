@@ -35,13 +35,12 @@ left: 1em;
   background-color:white;
   border-radius: 5px;
   padding: 1em;
-  box-shadow: 1px 1px 5px;
 }
 
 
 
 
-@media only screen and (max-width: 710px) {
+@media only screen and (max-width: 1024px) {
   .dashbox{
     height:auto !important;
     max-width:100px !important;
