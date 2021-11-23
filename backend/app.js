@@ -10,7 +10,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const cors = require('cors');
 // helper imports //
-// const dbHelpers = require('./db/helpers/dbHelpers')(db);
+const dbHelpers = require('./db/helpers/dbHelpers')(db);
 
 // Middleware/-----
 // use cors before your routes are set up/-----
@@ -42,7 +42,8 @@ const io = require('socket.io')(server, {
   },
 });
 
-//
+app.use("/api/patients", patientsRouter(dbHelpers));
+app.use("/api/practitioners", practitionersRouter(dbHelpers));
 
 io.on('connection', (socket) => {
   // local caller
