@@ -1,8 +1,9 @@
 import Box from '@mui/material/Box';
 import './dashboard.css'
 import VideocamIcon from '@mui/icons-material/Videocam';
-
+import FormCard from './FormCard';
 import List from '@mui/material/List';
+import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -27,6 +28,7 @@ const COMPLETED = "COMPLETED"
 const PRAC = "PRAC"
 const VIDEO = "VIDEO"
 const CHAT = "CHAT"
+const FORM = "FORM"
 
 
 export default function Dashboard(){
@@ -40,6 +42,15 @@ return (
   <Box className="dashbox">
       <nav aria-label="main mailbox folders">
         <List>
+        <ListItem>
+            <ListItemButton onClick={() => transition(mode === FORM? EMPTY : FORM)} >
+              <ListItemIcon>
+                <LibraryBooksIcon style={{fill: "black"}}/>
+              </ListItemIcon>
+              <ListItemText className="itemtext" primary="Fillout Form" />
+            </ListItemButton>
+          </ListItem>
+          <Divider className="divider" />
           <ListItem>
             <ListItemButton onClick={() => transition(mode === CALENDAR? EMPTY : CALENDAR)} >
               <ListItemIcon>
@@ -93,6 +104,9 @@ return (
     </Box>
     </Grid>
     <Grid item lg>
+    {mode === FORM && (
+    <FormCard />
+    )}
     {mode === CALENDAR && (
     <CalendarCard className="calendar-card"/>
     )}
