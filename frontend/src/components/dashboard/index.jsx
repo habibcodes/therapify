@@ -1,7 +1,7 @@
 import Box from '@mui/material/Box';
 import './dashboard.css'
 import VideocamIcon from '@mui/icons-material/Videocam';
-import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
+
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
@@ -17,6 +17,7 @@ import CompletedCard from './CompletedCard'
 import PracCard from './PracCard'
 import VideoCard from './VideoCard'
 import ChatCard from './ChatCard'
+
 
 import useVisualMode from '../../hooks/useVisualMode';
 
@@ -83,6 +84,7 @@ return (
               <ListItemText className="itemtext" primary="Chat Session" />
             </ListItemButton>
           </ListItem>
+        
          
           
         </List>

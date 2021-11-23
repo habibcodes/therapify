@@ -3,8 +3,8 @@
 margin-top: 3em;
 border-radius:10px;
 width: 22vw;
-height: 80vh;
-max-width: 300px !important;
+height: auto;
+max-width: 255px !important;
 
 
 position:fixed;
@@ -32,6 +32,12 @@ left: 1em;
 
 }
 
+.boxheader{
+  background-color: white;
+  padding: 1em;
+  border-radius:5px;
+}
+
 .practitioner{
   color:black !important;
   background-color:white;
@@ -44,16 +50,12 @@ left: 1em;
 @media only screen and (max-width: 1024px) {
   .dashbox{
     height:auto !important;
-    max-width:100px !important;
- 
-  
-    
-    
-  }
+    max-width:85px !important;
+ }
   .itemtext {
 display:none ;
   }
- 
+
   .divider{
     width:70%;
   }

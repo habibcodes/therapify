@@ -37,7 +37,7 @@ export default function Card() {
         <div>
   
           <>
-            <h1 style={{ color: "#f0f0f0" }}>Practitioners</h1>
+          
             
             <TextField id="outlined-basic" label="Search Practitioners" onChange={updateSearchTerm} variant="outlined" />
             
