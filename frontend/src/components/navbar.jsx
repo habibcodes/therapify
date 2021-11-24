@@ -30,7 +30,7 @@ export default function ButtonAppBar() {
           
           <Button component = {Link} to='/' color="inherit">Home</Button>
           
-          <Button color="inherit">Login</Button>
+          <Button component = {Link} to='/login' color="inherit">Login</Button>
           
         </Toolbar>
         
