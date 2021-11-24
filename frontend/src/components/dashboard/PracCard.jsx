@@ -1,7 +1,8 @@
 import { Box } from "@mui/system";
 import { getPractitioners } from "./helpers";
 import { useState, useEffect } from "react";
-import axios from "axios";
+import { TextField } from "@material-ui/core";
+
 
 export default function Card() {
   const [practitioners, setPractitioners] = useState([]);
@@ -34,13 +35,17 @@ export default function Card() {
     <div>
       <Box className="clickbox" sx={{ bgcolor: "background.paper" }}>
         <div>
-          List of Practitioners go here
+  
           <>
-            <h1 style={{ color: "#f0f0f0" }}>Practitioners</h1>
-            <input onChange={updateSearchTerm}></input>
+          
+            
+            <TextField id="outlined-basic" label="Search Practitioners" onChange={updateSearchTerm} variant="outlined" />
+            
+            
+            
             <h1 style={{ color: "#f0f0f0" }}>{searchTerm}</h1>
             {filteredPractitioners.map((practitioner) => (
-              <p style={{ color: "#f0f0f0" }}>{JSON.stringify(practitioner)}</p>
+              <p className="practitioner" style={{ color: "#f0f0f0" }}>{practitioner.first_name} {practitioner.last_name}, specialty: {practitioner.specialty}</p>
             ))}
           </>
         </div>

@@ -11,15 +11,14 @@ import { Link } from 'react-router-dom'
 
 export default function ButtonAppBar() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box >
       <AppBar className="nav1" position="static">
         <Toolbar>
           <IconButton
-            size="large"
-            edge="start"
+            
             color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
+            
+            
             
           >
             
@@ -31,7 +30,7 @@ export default function ButtonAppBar() {
           
           <Button component = {Link} to='/' color="inherit">Home</Button>
           
-          <Button color="inherit">Login</Button>
+          <Button component = {Link} to='/login' color="inherit">Login</Button>
           
         </Toolbar>
         
