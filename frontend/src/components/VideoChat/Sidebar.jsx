@@ -123,22 +123,11 @@ const Sidebar = ({ children }) => {
               )}
             </Grid>
             <Grid item xs={12} md={6} className={classes.padding}>
-              {/* {!videoState ? (
-                <Button
-                  onClick={() => {
-                    setVideoState(true);
-                  }}>
-                  Turn on feed
-                </Button>
-              ) : (
-                <Button
-                  onClick={() => {
-                    setVideoState(false);
-                  }}>
-                  Turn off feed
-                </Button>
-              )} */}
+            
               <Button
+              variant='contained'
+              color='primary'
+              fullWidth
                 onClick={() => {
                   setVideoState(!videoState);
                 }}>
