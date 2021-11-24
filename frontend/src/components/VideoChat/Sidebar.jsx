@@ -45,11 +45,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Sidebar = ({ children }) => {
+  console.log('sidebar props:', children);
   const {
     me,
     callAccepted,
     name,
     setName,
+    videoState,
+    setVideoState,
     callEnded,
     leaveCall,
     callUser,
@@ -118,6 +121,29 @@ const Sidebar = ({ children }) => {
                   Call
                 </Button>
               )}
+            </Grid>
+            <Grid item xs={12} md={6} className={classes.padding}>
+              {/* {!videoState ? (
+                <Button
+                  onClick={() => {
+                    setVideoState(true);
+                  }}>
+                  Turn on feed
+                </Button>
+              ) : (
+                <Button
+                  onClick={() => {
+                    setVideoState(false);
+                  }}>
+                  Turn off feed
+                </Button>
+              )} */}
+              <Button
+                onClick={() => {
+                  setVideoState(!videoState);
+                }}>
+                {videoState ? 'Turn feed off' : 'Turn feed on'}{' '}
+              </Button>
             </Grid>
           </Grid>
         </form>

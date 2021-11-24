@@ -20,6 +20,9 @@ const ContextProvider = ({ children }) => {
   const [call, setCall] = useState({});
   // set the local feed 'me' state
   const [me, setMe] = useState('');
+  //
+  const [videoState, setVideoState] = useState(false);
+  // const [audioState, setAudioState] = useState(false);
 
   // reference for local video
   const myVideo = useRef();
@@ -32,7 +35,7 @@ const ContextProvider = ({ children }) => {
     // get media devices and set audio/video to on
     // then set the stream to the currentStream feed
     navigator.mediaDevices
-      .getUserMedia({ video: true, audio: true })
+      .getUserMedia({ video: videoState, audio: true })
       .then((currentStream) => {
         setStream(currentStream);
         // now set my video stream src to the currentStream feed
@@ -45,7 +48,7 @@ const ContextProvider = ({ children }) => {
     socket.on('callUser', ({ from, name: callerName, signal }) => {
       setCall({ isReceivingCall: true, from, name: callerName, signal });
     });
-  }, []);
+  }, [videoState]);
 
   // logic for when local computer accepts call from other user
   const answerCall = () => {
@@ -114,6 +117,8 @@ const ContextProvider = ({ children }) => {
         userVideo,
         callAccepted,
         callEnded,
+        videoState,
+        setVideoState,
         setName,
         callUser,
         answerCall,
