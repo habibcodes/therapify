@@ -1,0 +1,13 @@
+.login-form{
+
+  background-color:transparent !important;
+  color:white !important;
+  backdrop-filter:blur(5px);
+}
+
+.text-field{
+  border-radius:5px;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+ 
+}

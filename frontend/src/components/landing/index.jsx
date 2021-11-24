@@ -12,7 +12,7 @@ export default function Landing(){
     {
       
       title: 'Patient',
-      redirect: '/dashboard',
+      redirect: '/login',
                   
       width: '50%',
     

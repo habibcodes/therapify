@@ -7,6 +7,7 @@ import Dashboard from './components/dashboard'
 import Background from './components/background';
 import PracDash from './components/Prac-dashboard'
 import { CssBaseline } from '@material-ui/core';
+import Login from './components/Login';
 
 
 
@@ -28,6 +29,7 @@ function App() {
       <Route path="/" element={<Landing />}/>
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/pracdash" element={<PracDash/>} />
+      <Route path="/login" element={<Login/>} />
 
       </Routes>
     </div>
