@@ -139,6 +139,9 @@ const Sidebar = ({ children }) => {
                 </Button>
               )} */}
               <Button
+                variant='contained'
+                color='primary'
+                fullWidth
                 onClick={() => {
                   setVideoState(!videoState);
                 }}>
