@@ -8,4 +8,5 @@ VALUES
     ('Donkey', 'Kong', 'donkey@nintendo.com', 'test', 'M', 'Toronto'),
     ('Arthur', 'Joker', 'j@gotham.com', 'test', 'M', 'Montreal'),
     ('Habib', 'Zai', 'z@gmail.com', 'test', 'M', 'Toronto'),
-    ('Nick', 'Yozov', 'n@gmail.com', 'test', 'M', 'Toronto');
+    ('Nik', 'Yozov', 'n@gmail.com', 'test', 'M', 'Toronto'),
+    ('Ahmed', 'Tarabia', 'a@gmail.com', 'test', 'M', 'Toronto');

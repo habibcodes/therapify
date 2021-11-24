@@ -25,7 +25,7 @@ const ContextProvider = ({ children }) => {
   // const [audioState, setAudioState] = useState(false);
 
   // reference for local video
-  const myVideo = useRef();
+  const myVideo = useRef({});
   // reference for other user video
   const userVideo = useRef();
   // reference for connection to peer
