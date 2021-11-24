@@ -7,8 +7,8 @@ export default function SingleVid(props) {
       type="text/html"
       width="640"
       height="390"
-      src={props.link}
-      frameborder="0"
+      src={props.src}
+      frameBorder="0"
     ></iframe>
   );
 }

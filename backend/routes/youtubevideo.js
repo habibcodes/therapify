@@ -18,8 +18,8 @@ module.exports = () => {
         let arr = [];
 
         data.items.forEach((item) => {
-          arr.push(`https://www.youtube.com/watch?v=` + item.id.videoId);
-          console.log(`https://www.youtube.com/watch?v=` + item.id.videoId);
+          arr.push(`https://www.youtube.com/embed/` + item.id.videoId);
+          console.log(`https://www.youtube.com/embed/` + item.id.videoId);
         });
         console.log("array backend---->", arr);
         res.json({
