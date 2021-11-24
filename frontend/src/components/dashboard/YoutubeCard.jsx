@@ -4,6 +4,7 @@ import axios from "axios";
 
 export default function Card() {
   const [search, setSearch] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
   const onSearchChanged = (event) => {
     const _title = event.target.value;
     console.log(_title);
@@ -14,9 +15,11 @@ export default function Card() {
     console.log("search value 11111----->", search);
     const test = axios
       .get(`/api/youtube`, { params: { search: search } })
-      .then((res) => res.data.videos);
+      .then((res) => {
+        setSearchResults(res.data.videos);
+      });
     console.log("search value----->", search);
-    console.log("test---->",test);
+    console.log("test---->", test);
   };
 
   return (
@@ -35,9 +38,15 @@ export default function Card() {
             </div>
           </form>
         </div>
-        <div>
-
-        </div>
+        <iframe
+          id="player"
+          type="text/html"
+          width="640"
+          height="390"
+          src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
+          frameborder="0"
+        ></iframe>
+        <div></div>
       </Box>
       <div></div>
     </div>
