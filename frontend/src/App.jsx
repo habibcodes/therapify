@@ -7,7 +7,7 @@ import Dashboard from './components/dashboard'
 import Background from './components/background';
 import PracDash from './components/Prac-dashboard'
 import { CssBaseline } from '@material-ui/core';
-import Login from './components/Login';
+import Login from './components/login';
 
 
 
