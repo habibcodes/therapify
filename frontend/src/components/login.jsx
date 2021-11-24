@@ -126,8 +126,17 @@ export default function Login() {
               </Grid>
               <Copyright sx={{ mt: 5 }} />
             </Box>
+           
           </Box>
+          
         </Grid>
+        <Box>
+              <Typography
+              className="left-text"
+              variant="h2">
+                With Therapify, you will never walk alone.
+              </Typography>
+              </Box>
       </Grid>
     
   );
