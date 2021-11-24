@@ -14,7 +14,7 @@ export default function Card() {
     console.log(event.target.value);
     setSearchTerm(event.target.value);
   }
-  console.log(practitioners);
+  
   const filteredPractitioners = practitioners.filter((practitioner) => {
     if (searchTerm === "") return true;
     for (const key in practitioner) {
