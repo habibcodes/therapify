@@ -15,3 +15,21 @@ module.exports = (db) => {
     getPractitioners,
   };
 };
+
+module.exports = (db) => {
+  const getAppointments = (email) => {
+    const query = {
+      text: `SELECT * FROM appointments`,
+    };
+    console.log(query);
+
+    return db
+      .query(query)
+      .then((result) => result.rows)
+      .catch((err) => err);
+  };
+
+  return {
+    getAppointments,
+  };
+};
