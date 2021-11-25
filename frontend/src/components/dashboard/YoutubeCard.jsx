@@ -1,5 +1,6 @@
 import { Box } from "@mui/system";
 import { useState, useEffect } from "react";
+import { TextField } from "@material-ui/core";
 import axios from "axios";
 import SingleVid from "./SingleVid";
 
@@ -18,8 +19,6 @@ export default function Card() {
       setSearchResults(res.data.videos);
       console.log("test---->", res.data.videos);
     });
-    // console.log("search value----->", search);
-    // console.log("test---->", test);
   };
 
   const filteredVideos = searchResults.map((searchResult) => (
@@ -32,16 +31,16 @@ export default function Card() {
         <div>
           <form onSubmit={onSubmit}>
             <div className="form-controls">
-              <label>Search</label>
-              <input
+              <TextField
+                id="outlined-basic"
+                label="Search Videos"
                 onChange={onSearchChanged}
-                id="video-search"
-                type="text"
-                placeholder="What are you looking for?"
+                variant="outlined"
               />
             </div>
           </form>
         </div>
+        <br />
         <div>{filteredVideos}</div>
 
         <div></div>
