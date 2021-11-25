@@ -25,14 +25,10 @@ export default function Card() {
   return (
     
         
-    <Box className="clickbox" styles={{display:'flex',alignItems:'center'}} >
+    <Box className="clickbox" >
     
        
-        {/* <AppBar className={classes.appBar} position='static'>
-          <Typography variant='h2' align='center'>
-            VideoChat
-          </Typography>
-        </AppBar> */}
+        
         {/* vidPlayer */}
         <VideoPlayer />
         {/* Sidebar -->notifications */}

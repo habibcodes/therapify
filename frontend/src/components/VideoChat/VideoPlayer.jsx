@@ -1,15 +1,17 @@
 import React, { useContext } from 'react';
-import { Grid, Typography, Paper, makeStyles } from '@material-ui/core';
-import './videoplayer.css'
+import { Grid, Typography, makeStyles } from '@material-ui/core';
+
 import { SocketContext } from '../../Context';
 import Sidebar from './Sidebar';
-import Notifications from './Notifications';
+
 
 // these are the styles for the video player size and how it should appear
 // across desktop and mobile devices
 const useStyles = makeStyles((theme) => ({
   video: {
     width: '100%',
+    borderRadius: 5,
+    boxShadow: 3,
     
     justifyContent: 'center'
    
@@ -28,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const VideoPlayer = () => {
+ 
   const {
     name,
     callAccepted,
@@ -46,9 +49,9 @@ const VideoPlayer = () => {
       {stream && (
       
           <Grid item md={6} className={classes.video}>
-           <Typography>
+           {/* <Typography>
              {name || 'Name'}
-             </Typography>
+             </Typography> */}
              
              
          
@@ -71,9 +74,9 @@ const VideoPlayer = () => {
       {callAccepted && !callEnded && (
         
           <Grid item  md={6} className={classes.video}>
-            <Typography >
+            {/* <Typography >
               {call.name || 'Name'}
-            </Typography>
+            </Typography> */}
          
             <video
               playsInline
