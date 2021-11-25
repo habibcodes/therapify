@@ -1,21 +1,14 @@
-import { Box } from "@mui/system"
+import { Box } from '@mui/system';
+import ChatBox from '../ChatBox/ChatBot';
 
 export default function Card() {
-
   return (
     <div>
-        
-    <Box className="clickbox" sx={{ bgcolor: 'background.paper' }}>
-    <div>
-      Chat Session goes here
-      </div>
-     
+      <Box className='clickbox' sx={{ bgcolor: 'background.paper' }}>
+        <div>Chat Session goes here</div>
+        <ChatBox />
       </Box>
-      <div>
-        
-      </div>
-
-
+      <div></div>
     </div>
-  )
+  );
 }
