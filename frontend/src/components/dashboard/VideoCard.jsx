@@ -1,8 +1,8 @@
-import { Box } from "@mui/system"
+import { Box } from '@mui/system';
 import { Typography, AppBar } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 // videoChat imports
-import VideoPlayer from '../VideoChat/VideoPlayer'
+import VideoPlayer from '../VideoChat/VideoPlayer';
 import Sidebar from '../VideoChat/Sidebar';
 import Notifications from '../VideoChat/Notifications';
 
