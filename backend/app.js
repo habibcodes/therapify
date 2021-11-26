@@ -16,34 +16,6 @@ const dbHelpers = require("./db/helpers/dbHelpers")(db);
 const port = normalizePort(process.env.PORT || "3001");
 app.set("port", port);
 
-// //YOUTUBE API -- START
-// require("dotenv").config();
-// // console.log(process.env.YOUTUBE_TOKEN);
-// const { google } = require("googleapis");
-// console.log(process.env.YOUTUBE_TOKEN);
-// google
-//   .youtube("v3")
-//   .search.list({
-//     key: process.env.YOUTUBE_TOKEN,
-//     part: "snippet",
-//     q: "eminem",
-//   })
-//   .then((response) => {
-//     const { data } = response;
-//     const arr = [];
-
-//     data.items.forEach((item) => {
-//       arr.push(`https://www.youtube.com/watch?v=` + item.id.videoId);
-//       console.log(`https://www.youtube.com/watch?v=` + item.id.videoId);
-//     });
-//     console.log(arr)
-//     return response.json;
-
-//   })
-//   .catch((err) => console.err);
-
-// //YOUTUBE API -- END
-
 // Middleware/-------------------------------------------------------------------
 // use cors before your routes are set up
 app.use(cors());
