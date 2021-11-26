@@ -1,31 +1,36 @@
 import React, { useContext } from 'react';
-import { Grid, Typography, Paper, makeStyles } from '@material-ui/core';
+import { Grid, Typography, makeStyles } from '@material-ui/core';
 
 import { SocketContext } from '../../Context';
+import Sidebar from './Sidebar';
+
 
 // these are the styles for the video player size and how it should appear
 // across desktop and mobile devices
 const useStyles = makeStyles((theme) => ({
   video: {
-    width: '550px',
-    [theme.breakpoints.down('xs')]: {
-      width: '300px',
-    },
+    width: '100%',
+    borderRadius: 5,
+    boxShadow: 3,
+    
+    justifyContent: 'center'
+   
+   
   },
   gridContainer: {
+    display: 'flex',
     justifyContent: 'center',
-    [theme.breakpoints.down('xs')]: {
-      flexDirection: 'column',
-    },
+   
   },
   paper: {
-    padding: '10px',
-    border: '2px solid black',
-    margin: '10px',
+    
+    
+   
   },
 }));
 
 const VideoPlayer = () => {
+ 
   const {
     name,
     callAccepted,
@@ -39,32 +44,40 @@ const VideoPlayer = () => {
   const classes = useStyles();
 
   return (
-    <Grid container className={classes.gridContainer}>
+    <Grid container spacing={2} className={classes.gridContainer}>
       {/* video from client outgoing */}
       {stream && (
-        <Paper className={classes.paper}>
-          <Grid item xs={12} md={6}>
-            <Typography variant='h5' gutterBottom>
-              {name || 'Name'}
-            </Typography>
+      
+          <Grid item md={6} className={classes.video}>
+           {/* <Typography>
+             {name || 'Name'}
+             </Typography> */}
+             
+             
+         
             <video
+            
               playsInline
               muted
               ref={myVideo}
               autoPlay
               className={classes.video}
             />
+           
+            
+            
           </Grid>
-        </Paper>
+      
       )}
 
       {/* video from peer incoming */}
       {callAccepted && !callEnded && (
-        <Paper className={classes.paper}>
-          <Grid item xs={12} md={6}>
-            <Typography variant='h5' gutterBottom>
+        
+          <Grid item  md={6} className={classes.video}>
+            {/* <Typography >
               {call.name || 'Name'}
-            </Typography>
+            </Typography> */}
+         
             <video
               playsInline
               ref={userVideo}
@@ -72,9 +85,12 @@ const VideoPlayer = () => {
               className={classes.video}
             />
           </Grid>
-        </Paper>
+       
       )}
+      
+       <Sidebar/>
     </Grid>
+    
   );
 };
 

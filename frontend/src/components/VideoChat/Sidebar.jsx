@@ -10,37 +10,55 @@ import {
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { Assignment, Phone, PhoneDisabled } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
+import VideocamIcon from '@mui/icons-material/Videocam';
+import VideocamOffIcon from '@mui/icons-material/VideocamOff';
+import Notifications from './Notifications';
+import Tooltip from '@mui/material/Tooltip';
+import { purple, green } from '@mui/material/colors';
+import { styled } from '@mui/material/styles';
+
 
 import { SocketContext } from '../../Context';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    flexDirection: 'column',
+    
   },
   gridContainer: {
-    width: '100%',
-    [theme.breakpoints.down('xs')]: {
-      flexDirection: 'column',
-    },
+    
+   
   },
   container: {
-    width: '600px',
-    margin: '35px 0',
-    padding: 0,
-    [theme.breakpoints.down('xs')]: {
-      width: '80%',
-    },
+    position: 'fixed',
+    bottom: 5
+    
   },
-  margin: {
-    marginTop: 20,
-  },
+ 
   padding: {
-    padding: 20,
+    display: 'flex',
+    padding: 5,
+    justifyContent: 'space-between'
+  
   },
-  paper: {
-    padding: '10px 20px',
-    border: '2px solid black',
+  marginBot: {
+    marginBot: 5
+    
+  },
+}));
+const ColorButton = styled(Button)(({ theme }) => ({
+  color: theme.palette.getContrastText(purple[500]),
+  backgroundColor: purple[500],
+  '&:hover': {
+    backgroundColor: purple[700],
+  },
+}));
+
+const GreenButton = styled(Button)(({ theme }) => ({
+  color: theme.palette.getContrastText(purple[500]),
+  backgroundColor: green[400],
+  '&:hover': {
+    backgroundColor: green[700],
   },
 }));
 
@@ -64,79 +82,94 @@ const Sidebar = ({ children }) => {
 
   return (
     <Container className={classes.container}>
-      <Paper elevation={10} className={classes.paper}>
+      <Notifications/>
+     
+      
         <form className={classes.root} noValidate autoComplete='off'>
           {/* xxxxxxxxxxxxx */}
-          <Grid container className={classes.gridContainer}>
+          <Grid container className={classes.padding}>
             <Grid item xs={12} md={6} className={classes.padding}>
-              <Typography gutterBottom variant='h6'>
-                Account Info
-              </Typography>
+              
               <TextField
                 label='Name'
                 value={name}
-                onChange={(e) => setName(e.target.value)}
                 fullWidth
+                
+                onChange={(e) => setName(e.target.value)}
+                
               />
-              {console.log(me)}
-              <CopyToClipboard text={me} className={classes.margin}>
-                <Button
-                  variant='contained'
-                  color='primary'
-                  fullWidth
-                  startIcon={<Assignment fontSize='large' />}>
-                  Copy Your ID
-                </Button>
-              </CopyToClipboard>
+             
+            
             </Grid>
             {/* xxxxxxxxxx */}
             <Grid item xs={12} md={6} className={classes.padding}>
-              <Typography gutterBottom variant='h6'>
-                Make a Call
-              </Typography>
+            
               <TextField
                 label='ID to Call'
                 value={idToCall}
+                fullWidth
                 onChange={(e) => setIdToCall(e.target.value)}
-                fullWidth
+               
               />
-              {callAccepted && !callEnded ? (
-                <Button
-                  variant='contained'
-                  color='secondary'
-                  startIcon={<PhoneDisabled fontSize='large' />}
-                  fullWidth
-                  onClick={leaveCall}
-                  className={classes.margin}>
-                  Hang Up
-                </Button>
-              ) : (
-                <Button
-                  variant='contained'
-                  color='primary'
-                  startIcon={<Phone fontSize='large' />}
-                  fullWidth
-                  onClick={() => callUser(idToCall)}
-                  className={classes.margin}>
-                  Call
-                </Button>
-              )}
+            
+            
             </Grid>
-            <Grid item xs={12} md={6} className={classes.padding}>
-              <Button
-                variant='contained'
-                color='primary'
-                fullWidth
+            <Grid container className={classes.padding}>
+            <Tooltip title="Turn camera on/off">
+              <ColorButton
+              variant='contained'
+              color='primary'
+              
                 onClick={() => {
                   setVideoState(!videoState);
                 }}>
-                {videoState ? 'Turn feed off' : 'Turn feed on'}{' '}
-              </Button>
+                {videoState ? <VideocamOffIcon/> : <VideocamIcon/>}{''}
+              </ColorButton>
+              </Tooltip>
+              {callAccepted && !callEnded ? (
+                <Tooltip title="End call">
+                <Button
+                  variant='contained'
+                  color='secondary'
+                  
+                
+                  onClick={leaveCall}
+                  className={classes.margin}>
+                <PhoneDisabled/>
+                </Button>
+                </Tooltip>
+              ) : (
+                <Tooltip title="Call with ID">
+                <GreenButton
+                  variant='contained'
+                  color='primary'
+                
+                  // fullWidth
+                  onClick={() => callUser(idToCall)}
+                  className={classes.margin}>
+                 <Phone />
+                </GreenButton>
+                </Tooltip>
+                
+                
+              )}
+                <CopyToClipboard text={me} className={classes.margin}>
+                  <Tooltip title="Copy your ID">
+                <ColorButton
+                  variant='contained'
+                  color='primary'
+                  
+                  
+                >
+                  <Assignment />
+                </ColorButton>
+                </Tooltip>
+              </CopyToClipboard>
             </Grid>
           </Grid>
         </form>
         {children}
-      </Paper>
+    
     </Container>
   );
 };
