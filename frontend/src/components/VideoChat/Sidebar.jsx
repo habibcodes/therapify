@@ -123,11 +123,10 @@ const Sidebar = ({ children }) => {
               )}
             </Grid>
             <Grid item xs={12} md={6} className={classes.padding}>
-            
               <Button
-              variant='contained'
-              color='primary'
-              fullWidth
+                variant='contained'
+                color='primary'
+                fullWidth
                 onClick={() => {
                   setVideoState(!videoState);
                 }}>

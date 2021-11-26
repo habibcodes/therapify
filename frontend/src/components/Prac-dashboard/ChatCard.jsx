@@ -1,5 +1,5 @@
 import { Box } from '@mui/system';
-import ChatBox from '../ChatBox/ChatBot';
+import ChatBox from '../ChatBox/ChatBox';
 
 export default function Card() {
   return (
