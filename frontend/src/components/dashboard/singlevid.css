@@ -1,4 +1,6 @@
-.singleVideo {
-  padding: 11px;
+.filterVideos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   /* padding-left: 10px; */
 }
