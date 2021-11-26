@@ -41,9 +41,9 @@ export default function Card() {
 
             <h1 style={{ color: "#f0f0f0" }}>{searchTerm}</h1>
             {filteredPatients.map((patient) => (
-              <p className="practitioner" style={{ color: "#f0f0f0" }}>
-                {patient.first_name} {patient.last_name}, disease:{" "}
-                {patient.disease}
+              <p className="patient" style={{ color: "#f0f0f0" }}>
+                {patient.first_name} {patient.last_name}, age:{patient.age}{" "}
+                disease: {patient.disease}
               </p>
             ))}
           </>

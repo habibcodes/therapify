@@ -11,12 +11,6 @@ module.exports = (db) => {
       .catch((err) => err);
   };
 
-  return {
-    getPractitioners,
-  };
-};
-
-module.exports = (db) => {
   const getPatients = (email) => {
     const query = {
       text: `SELECT first_name, last_name, age, disease FROM users JOIN patients ON users.id = user_id`,
@@ -29,12 +23,6 @@ module.exports = (db) => {
       .catch((err) => err);
   };
 
-  return {
-    getPatients,
-  };
-};
-
-module.exports = (db) => {
   const getAppointments = (email) => {
     const query = {
       text: `SELECT * FROM appointments`,
@@ -49,5 +37,7 @@ module.exports = (db) => {
 
   return {
     getAppointments,
+    getPatients,
+    getPractitioners,
   };
 };

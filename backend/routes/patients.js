@@ -3,7 +3,7 @@ const router = express.Router();
 
 module.exports = (dbHelpers) => {
   console.log(dbHelpers);
-  /* Access all practitioners */
+  /* Access all patients */
   router.get("/", function (req, res, next) {
     dbHelpers
       .getPatients()

@@ -36,9 +36,7 @@ app.use("/api/practitioners", practitionersRouter(dbHelpers));
 app.use("/api/youtube", youtubeRouter());
 app.use("/api/appointments", appointmentsRouter(dbHelpers));
 
-app.get("/api/appointments");
 app.get("/api/authenticate");
-app.post("/api/appointments");
 app.post("/api/login");
 app.post("/api/register");
 
