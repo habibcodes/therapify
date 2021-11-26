@@ -1,30 +1,25 @@
-import './landing.css'
+import './landing.css';
 
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import ButtonBase from '@mui/material/ButtonBase';
 import Typography from '@mui/material/Typography';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-export default function Landing(){
- 
+export default function Landing(props) {
   const images = [
     {
-      
       title: 'Patient',
       redirect: '/login',
-                  
+      name: 'patient',
       width: '50%',
-    
     },
     {
-     
       title: 'Practitioner',
       redirect: '/pracdash',
+      name: 'practitioner',
       width: '50%',
     },
-    
-   
   ];
   const ImageButton = styled(ButtonBase)(({ theme }) => ({
     position: 'relative',
@@ -46,7 +41,7 @@ export default function Landing(){
       },
     },
   }));
-  
+
   const ImageSrc = styled('span')({
     position: 'absolute',
     left: 0,
@@ -56,7 +51,7 @@ export default function Landing(){
     backgroundSize: 'cover',
     backgroundPosition: 'center 30%',
   });
-  
+
   const Image = styled('span')(({ theme }) => ({
     position: 'absolute',
     left: 0,
@@ -68,7 +63,7 @@ export default function Landing(){
     justifyContent: 'center',
     color: theme.palette.common.white,
   }));
-  
+
   const ImageBackdrop = styled('span')(({ theme }) => ({
     position: 'absolute',
     left: 0,
@@ -79,7 +74,7 @@ export default function Landing(){
     opacity: 0,
     transition: theme.transitions.create('opacity'),
   }));
-  
+
   const ImageMarked = styled('span')(({ theme }) => ({
     height: 3,
     width: 18,
@@ -89,41 +84,46 @@ export default function Landing(){
     left: 'calc(50% - 9px)',
     transition: theme.transitions.create('opacity'),
   }));
-return ( 
-  <div>
-
-<Box className="mainBox" sx={{ display: 'flex', flexWrap: 'wrap', minWidth: 300, width: '100%' }}>
-      {images.map((image) => (
-        <ImageButton
-          focusRipple
-          key={image.title}
-          style={{
-            width: image.width,
-          }}
-          component={Link} to={image.redirect}
-        >
-          <ImageSrc style={{ backgroundImage: `url(${image.url})` }} />
-          <ImageBackdrop className="MuiImageBackdrop-root" />
-          <Image>
-            <Typography
-              component="span"
-              variant="subtitle1"
-              color="inherit"
-              sx={{
-                position: 'relative',
-                p: 4,
-                pt: 2,
-                pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
-              }}
-            >
-              {image.title}
-              <ImageMarked className="MuiImageMarked-root" />
-            </Typography>
-          </Image>
-        </ImageButton>
-      ))}
-    </Box>
-
-</div>
-)
+  return (
+    <div>
+      <Box
+        className='mainBox'
+        sx={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          minWidth: 300,
+          width: '100%',
+        }}>
+        {images.map((image) => (
+          <ImageButton
+            focusRipple
+            key={image.title}
+            style={{
+              width: image.width,
+            }}
+            component={Link}
+            to={image.redirect}>
+            <ImageSrc style={{ backgroundImage: `url(${image.url})` }} />
+            <ImageBackdrop className='MuiImageBackdrop-root' />
+            <Image>
+              <Typography
+                onClick={() => props.setUser(image.name)}
+                component='span'
+                variant='subtitle1'
+                color='inherit'
+                sx={{
+                  position: 'relative',
+                  p: 4,
+                  pt: 2,
+                  pb: (theme) => `calc(${theme.spacing(1)} + 6px)`,
+                }}>
+                {image.title}
+                <ImageMarked className='MuiImageMarked-root' />
+              </Typography>
+            </Image>
+          </ImageButton>
+        ))}
+      </Box>
+    </div>
+  );
 }

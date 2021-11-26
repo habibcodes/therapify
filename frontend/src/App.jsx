@@ -7,21 +7,30 @@ import Background from './components/background';
 import PracDash from './components/Prac-dashboard';
 import { CssBaseline } from '@material-ui/core';
 import Login from './components/Login';
+import { UserContext } from './components/UserContext';
+import { useState } from 'react';
 
 function App() {
+  const [user, setUser] = useState('patient');
+
   return (
     <BrowserRouter>
       <CssBaseline />
-      <div>
-        <Navbar />
-        <Background />
-        <Routes>
-          <Route path='/' element={<Landing />} />
-          <Route path='/dashboard' element={<Dashboard />} />
-          <Route path='/pracdash' element={<PracDash />} />
-          <Route path='/login' element={<Login />} />
-        </Routes>
-      </div>
+      <UserContext.Provider value={user}>
+        <div>
+          <Navbar />
+          <Background />
+          <Routes>
+            <Route
+              path='/'
+              element={<Landing user={user} setUser={setUser} />}
+            />
+            <Route path='/dashboard' element={<Dashboard />} />
+            <Route path='/pracdash' element={<PracDash />} />
+            <Route path='/login' element={<Login />} />
+          </Routes>
+        </div>
+      </UserContext.Provider>
     </BrowserRouter>
   );
 }
