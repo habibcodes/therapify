@@ -11,7 +11,7 @@ module.exports = () => {
       .search.list({
         key: process.env.YOUTUBE_TOKEN,
         part: "snippet",
-        maxResults: 9,
+        maxResults: 20,
         q: req.query.search,
       })
       .then((response) => {
