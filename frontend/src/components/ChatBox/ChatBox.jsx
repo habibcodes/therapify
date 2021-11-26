@@ -18,6 +18,7 @@ export default function ChatBox() {
   const selected =
     user === 'patient' ? userType.Patient : userType.Practitioner;
   console.log('from ChatBox line 19:', selected);
+
   return (
     <ChatEngine
       projectID='085cfa50-b937-4736-928d-105a1c59302e'
