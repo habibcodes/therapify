@@ -137,7 +137,7 @@ export default function Dashboard() {
                       }
                     >
                       <ListItemIcon>
-                        <YouTubeIcon style={{ fill: "black" }} />
+                        <YouTubeIcon style={{ fill: "red" }} />
                       </ListItemIcon>
                       <ListItemText
                         className="itemtext"
