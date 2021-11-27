@@ -46,7 +46,7 @@ export default function SchedulerExample() {
       const pracData = res.data;
     
       const filteredPracs = pracData.map((person) => ({
-        id: Math.random(100),
+        id: person.id,
         text: `${person.first_name} ${person.last_name}`,
         color: randomColor(),
       }));
@@ -67,10 +67,13 @@ export default function SchedulerExample() {
 
   const commitChanges = ({ added, changed, deleted }) => {
     let data = appointmentData;
+    console.log(added)
     if (added) {
-      const startingAddedId =
-        data.length > 0 ? data[data.length - 1].id + 1 : 0;
-      data = [...data, { id: startingAddedId, ...added }];
+      axios.post('/api/appointments/new', { appointment: added })
+      .then(
+        setAppointmentData(prev => [...prev, added])
+      )
+      
     }
     if (changed) {
       data = data.map((appointment) =>
