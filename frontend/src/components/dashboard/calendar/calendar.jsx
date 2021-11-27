@@ -64,6 +64,10 @@ export default function SchedulerExample() {
       instances: practitioners,
     },
   ];
+  
+  const getAppointmentIndexById = (id) => appointmentData.findIndex(appointment => appointment.id == id )
+
+
 
   const commitChanges = ({ added, changed, deleted }) => {
     let data = appointmentData;
@@ -76,6 +80,33 @@ export default function SchedulerExample() {
       
     }
     if (changed) {
+      // console.log('changed ==== ', changed)
+      // console.log('changed object keys ==== ', Object.keys(changed))
+      let appointmentId = Object.keys(changed)[0]
+      const updateAppointment = changed[appointmentId]
+      // console.log('updateAppointment', updateAppointment)
+      appointmentId = parseInt(appointmentId)
+      const appointmentIndex = getAppointmentIndexById(appointmentId)
+      const appointment = { ...appointmentData[appointmentIndex], ...updateAppointment }
+      // console.log('appointment with changes===', appointment)
+      
+      axios.put(`/api/appointments/${appointmentId}`, { appointment })
+      .then(res => {
+        console.log('res data ======= ', res.data)
+        console.log('appointmentindex =====+++', appointmentIndex)
+        const newAppointments = [...appointmentData]
+        newAppointments[appointmentIndex] = appointment
+        setAppointmentData(newAppointments)
+
+      
+      }
+
+        // setAppointmentData(prev => [...prev, added])
+      )
+
+     
+      console.log(' appointment id =====', appointmentId)
+
       data = data.map((appointment) =>
         changed[appointment.id]
           ? { ...appointment, ...changed[appointment.id] }
@@ -83,7 +114,7 @@ export default function SchedulerExample() {
       );
     }
     if (deleted !== undefined) {
-      console.log('data ===== ', deleted)
+      
       
    
       axios.delete(`/api/appointments/${deleted}`)

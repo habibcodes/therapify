@@ -20,8 +20,22 @@ module.exports = (dbHelpers) => {
 
   router.post('/new', function (req, res, next) {
     dbHelpers
-    .setAppointments(req.body.appointment)
+    .setAppointment(req.body.appointment)
     .then(res.status(200).json({}))
+    .catch(error => console.log(error));
+    
+  })
+
+  router.put('/:appointment_id', function (req, res, next) {
+    console.log('update req.body ===', req.body)
+    const appointmentId = req.params.appointment_id
+    console.log('appointment id ===', appointmentId)
+   
+    dbHelpers
+    .updateAppointment(req.body.appointment)
+    .then(response => {
+      res.status(200).json(response)
+    })
     .catch(error => console.log(error));
     
   })
@@ -30,7 +44,7 @@ module.exports = (dbHelpers) => {
     const { appointment_id } = req.params
     console.log('appointmentid from express ====', appointment_id)
     dbHelpers
-    .deleteAppointments(appointment_id)
+    .deleteAppointment(appointment_id)
     .then(res.status(200).json({}))
     .catch(error => console.log(error));
   })

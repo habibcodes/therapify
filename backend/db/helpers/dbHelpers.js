@@ -35,7 +35,7 @@ module.exports = (db) => {
       .catch((err) => err);
   };
 
-  const setAppointments = (appointment) => {
+  const setAppointment = (appointment) => {
     
     const query = {
       text: `INSERT into appointments(title, practitioner_id, start_date, end_date )
@@ -50,7 +50,21 @@ module.exports = (db) => {
     .catch((err) => err);
   }
 
-  const deleteAppointments = (appointment) => {
+  const updateAppointment = (appointment, appointment_id) => {
+    console.log('++++++', appointment, appointment_id)
+    const query = {
+      text: `UPDATE appointments SET title = $1, practitioner_id = $2, start_date = $3, end_date = $4
+      WHERE id = $5`,
+      values: [appointment.title, appointment.ownerId, appointment.startDate, appointment.endDate, appointment.id]
+    }
+    
+    return db
+    .query(query)
+    .then((result) => result.rows[0])
+    .catch((err) => console.log('error=====',err));
+  }
+
+  const deleteAppointment = (appointment) => {
     console.log('appointments delete=', appointment)
     const query = {
       text: `DELETE FROM appointments WHERE id = $1`,
@@ -75,7 +89,8 @@ module.exports = (db) => {
     getAppointments,
     getPatients,
     getPractitioners,
-    setAppointments,
-    deleteAppointments
+    setAppointment,
+    updateAppointment,
+    deleteAppointment
   };
 };
