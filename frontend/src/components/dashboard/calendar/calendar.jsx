@@ -20,18 +20,31 @@ import {
   EditingState,
 } from "@devexpress/dx-react-scheduler";
 
-import { appointments } from "./appointments";
+// import { appointments } from "./appointments";
 import { useEffect, useState } from "react";
 
 export default function SchedulerExample() {
-  const [appointmentData, setAppointmentData] = useState(appointments);
+  const [appointmentData, setAppointmentData] = useState([]);
   const [practitioners, setPractitioners] = useState([]);
 
   useEffect(() => {
-    setAppointmentData(appointments);
+    axios.get('/api/appointments').then(res => {
+      console.log(res)
+      const appData = res.data
+      const filteredAppointments = appData.map((appoint) => ({
+        id: appoint.id,
+        title: appoint.title,
+        startDate: new Date(appoint.start_date),
+        endDate: new Date(appoint.end_date)
+        
+      }))
+      setAppointmentData(filteredAppointments)
+    })
+
+   
     axios.get(`/api/practitioners`).then((res) => {
       const pracData = res.data;
-      console.log(pracData);
+    
       const filteredPracs = pracData.map((person) => ({
         id: Math.random(100),
         text: `${person.first_name} ${person.last_name}`,
@@ -69,7 +82,7 @@ export default function SchedulerExample() {
     if (deleted !== undefined) {
       data = data.filter((appointment) => appointment.id !== deleted);
     }
-    setAppointmentData(data);
+    setAppointmentData(prev => [...prev, data]);
   };
 
   return (
