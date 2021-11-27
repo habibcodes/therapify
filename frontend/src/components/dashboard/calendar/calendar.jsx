@@ -67,7 +67,7 @@ export default function SchedulerExample() {
 
   const commitChanges = ({ added, changed, deleted }) => {
     let data = appointmentData;
-    console.log(added)
+   
     if (added) {
       axios.post('/api/appointments/new', { appointment: added })
       .then(
@@ -83,9 +83,18 @@ export default function SchedulerExample() {
       );
     }
     if (deleted !== undefined) {
-      data = data.filter((appointment) => appointment.id !== deleted);
+      console.log('data ===== ', deleted)
+      
+   
+      axios.delete(`/api/appointments/${deleted}`)
+      .then(
+        setAppointmentData(prev => prev.filter((appointment) => appointment.id !== deleted))
+      )
+      .catch(error => console.log('delete error = ', error))
+      
+      // data = data.filter((appointment) => appointment.id !== deleted);
     }
-    setAppointmentData(prev => [...prev, data]);
+    // setAppointmentData(prev => [...prev, data]);
   };
 
   return (

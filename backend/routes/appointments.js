@@ -12,11 +12,11 @@ module.exports = (dbHelpers) => {
       .catch(error => console.log(error));
       
   });
-  router.get("/:appointment_id", function (req, res, next) {
-    const practitioners = { name: "Bob", email: "bob@email.com" };
-    res.json(practitioners)
+  // router.get("/:appointment_id", function (req, res, next) {
+  //   const practitioners = { name: "Bob", email: "bob@email.com" };
+  //   res.json(practitioners)
     
-  });
+  // });
 
   router.post('/new', function (req, res, next) {
     dbHelpers
@@ -25,5 +25,15 @@ module.exports = (dbHelpers) => {
     .catch(error => console.log(error));
     
   })
+
+  router.delete('/:appointment_id', function (req, res, next) {
+    const { appointment_id } = req.params
+    console.log('appointmentid from express ====', appointment_id)
+    dbHelpers
+    .deleteAppointments(appointment_id)
+    .then(res.status(200).json({}))
+    .catch(error => console.log(error));
+  })
+
   return router;
 };
