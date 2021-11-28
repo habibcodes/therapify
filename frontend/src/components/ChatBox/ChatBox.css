@@ -1,3 +1,12 @@
+/* -----------------------Main Wrapper------------------ */
+.ce-chat-engine {
+  background-color: orange;
+}
+.ce-wrapper {
+  background-color: orange;
+}
+
+/* -----------------Middle Column---------------------- */
 /* .ce-chat-feed-column {
   background-color: tomato !important;
   border-radius: 50px !important;
@@ -61,15 +70,15 @@
 
 /* styles chat feed bg */
 .ce-chat-feed-container {
-  background-color: transparent !important;
-  border-radius: 50px !important;
+  background-color: green !important;
+  /* border-radius: 50px !important; */
 }
 
 /* .ce-msg-form-container {
   background: green !important;
 } */
 
-/* -------------------------------------- */
+/* ----------------Left Column---------------------- */
 
 .ce-chat-list-column {
 }
@@ -78,6 +87,8 @@
 }
 
 .ce-chats-container {
+  background-color: green !important;
+  border-radius: 50px !important;
 }
 
 .ce-chat-form-container {
@@ -90,15 +101,18 @@
   border-radius: 50px !important;
 }
 
-/* --------------------------------- */
+/* --------------Right Column------------------- */
 
 .ce-settigs-column {
+  /* border-radius: 50px !important; */
 }
 
 .ce-settings {
 }
 
 .ce-settings-container {
+  background-color: green !important;
+  border-radius: 50px !important;
 }
 
 .ce-chat-settings-contaienr {

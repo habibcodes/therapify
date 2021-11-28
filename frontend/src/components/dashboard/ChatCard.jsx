@@ -5,7 +5,7 @@ import ChatBox from '../ChatBox/ChatBox';
 export default function Card() {
   return (
     // <div>
-    <Box className='clickbox' sx={{ bgcolor: 'background.paper' }}>
+    <Box className='clickbox'>
       <ChatBox />
       {/* <JustChatBox /> */}
     </Box>
