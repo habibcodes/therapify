@@ -11,13 +11,18 @@ import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import Collapse from "@mui/material/Collapse";
 import Avatar from "@mui/material/Avatar";
+// import StyledBadge from "@mui/material/StyledBadge";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { red } from "@mui/material/colors";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import VideocamIcon from "@mui/icons-material/Videocam";
+import ChatIcon from "@mui/icons-material/Chat";
+import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 import "./praccard.css";
+
 
 export default function PractitionerCard() {
   const [expanded, setExpanded] = React.useState(false);
@@ -73,6 +78,8 @@ export default function PractitionerCard() {
     return false;
   });
 
+ 
+
   return (
     <div>
       <Box className="clickbox" sx={{ bgcolor: "background.paper" }}>
@@ -89,25 +96,35 @@ export default function PractitionerCard() {
             <h1 style={{ color: "#f0f0f0" }}>{searchTerm}</h1>
 
             {filteredPractitioners.map((practitioner, index) => (
-              // <Grid item>
+              
               <Card className="practitioner" style={{ color: "#f0f0f0" }}>
                 <CardHeader
                   avatar={
-                    <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe" >
-                      {`${practitioner.first_name[0]}${practitioner.last_name[0]}`}
-                     
+                    // <StyledBadge
+                    //   overlap="circular"
+                    //   anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                    //   variant="dot"
+                    //   >
+                    <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe" src="https://images.unsplash.com/photo-1541647376583-8934aaf3448a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGZhY2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60">
+                      {/* {`${practitioner.first_name[0]}${practitioner.last_name[0]}`} */}
+                      
                     </Avatar>
                   }
                   title={`${practitioner.first_name} ${practitioner.last_name}`}
-                  subheader={`specialty: ${practitioner.specialty}`}
+                  subheader={`Expertise: ${practitioner.specialty}`}
                 />
+                {/* </StyledBadge> */}
 
                 <CardActions disableSpacing>
-                  <IconButton aria-label="add to favorites">
-                    <FavoriteIcon />
+                  
+                  <IconButton aria-label="share">
+                    <ChatIcon />
                   </IconButton>
                   <IconButton aria-label="share">
-                    <ShareIcon />
+                    <VideocamIcon />
+                  </IconButton>
+                  <IconButton aria-label="share">
+                    <EventAvailableIcon />
                   </IconButton>
                   <ExpandMore
                     expand={practitioner.expanded}
@@ -125,10 +142,10 @@ export default function PractitionerCard() {
                   unmountOnExit
                 >
                   <CardContent>
-                    <Typography paragraph>{practitioner.first_name}</Typography>
+                    <Typography variant="h6" color="primary" fontWeight='bold'>Education</Typography>
                     <Typography paragraph>
-                      Heat 1/2 cup of the broth in a pot until simmering, add
-                      saffron and set aside for 10 minutes.
+                      Get in contact:
+                      Email: {practitioner.email}
                     </Typography>
                   </CardContent>
                 </Collapse>
