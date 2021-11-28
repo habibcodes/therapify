@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Button, Typography } from '@material-ui/core';
-
+import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk';
 import { SocketContext } from '../../Context';
 
 
@@ -10,10 +10,10 @@ const Notifications = () => {
   return (
     <>
       {call.isReceivingCall && !callAccepted && (
-        <div >
+        <div style={{marginLeft:7}} >
           <Typography>{call.name || 'Unknown'} is calling:</Typography>
-          <Button variant='contained' color='primary' onClick={answerCall}>
-            Answer
+          <Button variant='contained' color='secondary' onClick={answerCall}>
+            <PhoneInTalkIcon />
           </Button>
         </div>
       )}
