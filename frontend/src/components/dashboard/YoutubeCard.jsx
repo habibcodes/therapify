@@ -1,9 +1,18 @@
+<<<<<<< HEAD
 import { Box } from "@mui/system";
 import { useState, useEffect } from "react";
 import { TextField } from "@material-ui/core";
 import axios from "axios";
 import SingleVid from "./SingleVid";
 import "./singlevid.css";
+=======
+import { Box } from '@mui/system';
+import { useState, useEffect } from 'react';
+import { TextField } from '@material-ui/core';
+import axios from 'axios';
+import SingleVid from './SingleVid';
+import './singlevid.css';
+>>>>>>> origin/master
 
 export default function Card() {
   const [search, setSearch] = useState("");
@@ -42,7 +51,7 @@ export default function Card() {
           </form>
         </div>
         <br />
-        <div className="filterVideos">{filteredVideos}</div>
+        <div className='filterVideos'>{filteredVideos}</div>
 
         <div></div>
       </Box>

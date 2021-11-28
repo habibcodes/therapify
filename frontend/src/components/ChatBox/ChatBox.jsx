@@ -1,6 +1,7 @@
 import { ChatEngine } from 'react-chat-engine';
 import { useContext } from 'react';
 import { UserContext } from '../UserContext';
+import './ChatBox.css';
 
 export default function ChatBox() {
   const user = useContext(UserContext);
@@ -28,6 +29,7 @@ export default function ChatBox() {
       // userSecret='test'
       userName={selected.userName}
       userSecret={selected.userSecret}
+      height='75vh' // keeps height fixed as chat size increases
     />
   );
 }
