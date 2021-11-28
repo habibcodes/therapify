@@ -13,6 +13,7 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { makeStyles } from "@material-ui/core/styles";
+import { SiTomorrowland } from 'react-icons/si'
 import './login.css'
 function Copyright(props) {
   return (
@@ -135,7 +136,13 @@ export default function Login() {
               className="left-text"
               variant="h2">
                 With Therapify, you will never walk alone.
+                
+                
+                
               </Typography>
+             
+             
+        
               </Box>
       </Grid>
     
