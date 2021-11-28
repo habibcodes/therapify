@@ -9,6 +9,7 @@ import { CssBaseline } from '@material-ui/core';
 import Login from './components/Login';
 import { UserContext } from './components/UserContext';
 import { useState } from 'react';
+import './App.css';
 
 function App() {
   const [user, setUser] = useState('patient');

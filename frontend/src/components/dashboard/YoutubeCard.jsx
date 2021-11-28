@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { TextField } from '@material-ui/core';
 import axios from 'axios';
 import SingleVid from './SingleVid';
+import './singlevid.css';
 
 export default function Card() {
   const [search, setSearch] = useState('');
