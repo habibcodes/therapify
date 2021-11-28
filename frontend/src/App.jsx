@@ -7,6 +7,7 @@ import Background from './components/background';
 import PracDash from './components/Prac-dashboard';
 import { CssBaseline } from '@material-ui/core';
 import Login from './components/Login';
+import PracLogin from './components/PracLogin'
 import { UserContext } from './components/UserContext';
 import { useState } from 'react';
 import './App.css';
@@ -29,6 +30,7 @@ function App() {
             <Route path='/dashboard' element={<Dashboard />} />
             <Route path='/pracdash' element={<PracDash />} />
             <Route path='/login' element={<Login />} />
+            <Route path='/praclogin' element={<PracLogin />} />
           </Routes>
         </div>
       </UserContext.Provider>

@@ -18,6 +18,7 @@ import PatientsCard from "./PatientsCard";
 import VideoCard from "./VideoCard";
 import ChatCard from "./ChatCard";
 import YoutubeCard from "./YoutubeCard";
+import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 
 import useVisualMode from "../../hooks/useVisualMode";
 
@@ -50,7 +51,7 @@ export default function Dashboard() {
                       </ListItemIcon>
                       <ListItemText
                         className="itemtext"
-                        primary="Upcoming Sessions"
+                        primary="Appointments"
                       />
                     </ListItemButton>
                   </ListItem>
@@ -92,7 +93,7 @@ export default function Dashboard() {
                       onClick={() => transition(mode === VIDEO ? EMPTY : VIDEO)}
                     >
                       <ListItemIcon>
-                        <VideocamIcon style={{ fill: "darkred" }} />
+                        <VideocamIcon style={{ fill: "black" }} />
                       </ListItemIcon>
                       <ListItemText
                         className="itemtext"
@@ -122,9 +123,9 @@ export default function Dashboard() {
                       }
                     >
                       <ListItemIcon>
-                        <YouTubeIcon style={{ fill: "red" }} />
+                        <CloudUploadIcon style={{ fill: "black" }} />
                       </ListItemIcon>
-                      <ListItemText className="itemtext" primary="Youtube" />
+                      <ListItemText className="itemtext" primary="Content" />
                     </ListItemButton>
                   </ListItem>
                 </List>

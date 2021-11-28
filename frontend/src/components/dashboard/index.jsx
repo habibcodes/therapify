@@ -11,7 +11,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import ChatIcon from "@mui/icons-material/Chat";
 import CalendarTodayIcon from "@mui/icons-material/CalendarToday";
-import EventAvailableIcon from "@mui/icons-material/EventAvailable";
+
 import PersonSearchIcon from "@mui/icons-material/PersonSearch";
 import { Container, Grid, Divider } from "@mui/material";
 import CalendarCard from "./CalendarCard";
@@ -42,53 +42,7 @@ export default function Dashboard() {
             <Box className="dashbox">
               <nav aria-label="main mailbox folders">
                 <List>
-                  <ListItem>
-                    <ListItemButton
-                      onClick={() => transition(mode === FORM ? EMPTY : FORM)}
-                    >
-                      <ListItemIcon>
-                        <LibraryBooksIcon style={{ fill: "black" }} />
-                      </ListItemIcon>
-                      <ListItemText
-                        className="itemtext"
-                        primary="Fillout Form"
-                      />
-                    </ListItemButton>
-                  </ListItem>
-                  <Divider className="divider" />
-                  <ListItem>
-                    <ListItemButton
-                      onClick={() =>
-                        transition(mode === CALENDAR ? EMPTY : CALENDAR)
-                      }
-                    >
-                      <ListItemIcon>
-                        <CalendarTodayIcon style={{ fill: "black" }} />
-                      </ListItemIcon>
-                      <ListItemText
-                        className="itemtext"
-                        primary="Upcoming Sessions"
-                      />
-                    </ListItemButton>
-                  </ListItem>
-                  <Divider className="divider" />
-                  <ListItem>
-                    <ListItemButton
-                      onClick={() =>
-                        transition(mode === COMPLETED ? EMPTY : COMPLETED)
-                      }
-                    >
-                      <ListItemIcon>
-                        <EventAvailableIcon style={{ fill: "black" }} />
-                      </ListItemIcon>
-                      <ListItemText
-                        className="itemtext"
-                        primary="Completed Sessions"
-                      />
-                    </ListItemButton>
-                  </ListItem>
-                  <Divider className="divider" />
-                  <ListItem>
+                <ListItem>
                     <ListItemButton
                       onClick={() => transition(mode === PRAC ? EMPTY : PRAC)}
                     >
@@ -104,6 +58,38 @@ export default function Dashboard() {
                   <Divider className="divider" />
                   <ListItem>
                     <ListItemButton
+                      onClick={() => transition(mode === FORM ? EMPTY : FORM)}
+                    >
+                      <ListItemIcon>
+                        <LibraryBooksIcon style={{ fill: "black" }} />
+                      </ListItemIcon>
+                      <ListItemText
+                        className="itemtext"
+                        primary="Patient Form"
+                      />
+                    </ListItemButton>
+                  </ListItem>
+                  <Divider className="divider" />
+                  <ListItem>
+                    <ListItemButton
+                      onClick={() =>
+                        transition(mode === CALENDAR ? EMPTY : CALENDAR)
+                      }
+                    >
+                      <ListItemIcon>
+                        <CalendarTodayIcon style={{ fill: "black" }} />
+                      </ListItemIcon>
+                      <ListItemText
+                        className="itemtext"
+                        primary="Appointments"
+                      />
+                    </ListItemButton>
+                  </ListItem>
+                  <Divider className="divider" />
+                
+                 
+                  <ListItem>
+                    <ListItemButton
                       onClick={() => transition(mode === VIDEO ? EMPTY : VIDEO)}
                     >
                       <ListItemIcon>
@@ -111,7 +97,7 @@ export default function Dashboard() {
                       </ListItemIcon>
                       <ListItemText
                         className="itemtext"
-                        primary="Video Session"
+                        primary="Video Chat"
                       />
                     </ListItemButton>
                   </ListItem>
@@ -125,7 +111,7 @@ export default function Dashboard() {
                       </ListItemIcon>
                       <ListItemText
                         className="itemtext"
-                        primary="Chat Session"
+                        primary="Live Chat"
                       />
                     </ListItemButton>
                   </ListItem>
@@ -137,9 +123,9 @@ export default function Dashboard() {
                       }
                     >
                       <ListItemIcon>
-                        <YouTubeIcon style={{ fill: "red" }} />
+                        <YouTubeIcon style={{ fill: "black" }} />
                       </ListItemIcon>
-                      <ListItemText className="itemtext" primary="Youtube" />
+                      <ListItemText className="itemtext" primary="Content Search" />
                     </ListItemButton>
                   </ListItem>
                 </List>
@@ -148,7 +134,7 @@ export default function Dashboard() {
           </Grid>
           <Grid item lg>
             {mode === FORM && <FormCard />}
-            {mode === CALENDAR && <CalendarCard className="calendar-card" />}
+            {mode === CALENDAR && <CalendarCard />}
             {mode === COMPLETED && <CompletedCard />}
             {mode === PRAC && <PracCard />}
             {mode === VIDEO && <VideoCard />}

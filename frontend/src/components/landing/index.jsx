@@ -16,7 +16,7 @@ export default function Landing(props) {
     },
     {
       title: 'Practitioner',
-      redirect: '/pracdash',
+      redirect: '/praclogin',
       name: 'practitioner',
       width: '50%',
     },
