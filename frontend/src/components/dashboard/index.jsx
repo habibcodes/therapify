@@ -107,7 +107,7 @@ export default function Dashboard() {
                       onClick={() => transition(mode === VIDEO ? EMPTY : VIDEO)}
                     >
                       <ListItemIcon>
-                        <VideocamIcon style={{ fill: "darkred" }} />
+                        <VideocamIcon style={{ fill: "black" }} />
                       </ListItemIcon>
                       <ListItemText
                         className="itemtext"

@@ -8,29 +8,29 @@
 
 /* -----------------Middle Column---------------------- */
 .ce-chat-feed-column {
-  background-color: transparent !important;
-  border-radius: 50px !important;
+  
+  
 }
 
 .ce-chat-feed {
-  background-color: transparent !important;
-  border-radius: 50px !important;
+  
 }
 
-/* .ce-chat-title {
-  background-color: tomato !important;
-  border-radius: 50px !important;
-} */
+.ce-chat-title {
+
+  
+}
 
 .ce-chat-list-mobile-options {
 }
 
 .ce-chat-title-container {
-  color:black;
+  color: #4050B5 !important;
   border-radius: 10px;
 }
 
 .ce-chat-title-text {
+  
   
 }
 
@@ -65,16 +65,44 @@
 }
 
 .ce-message-bubble{
+  background-color: #4050B5 !important;
+
   
 }
 
 /* houses b/i/u/code/attachments options */
+#msg-form-container{
+  
+}
+.ce-quil-container{
+  /* background: transparent !important; */
+}
 .ql-toolbar ql-snow {
+   background:white !;
+}
+.ql-container{
+  
+  /* background: transparent !important; */
+}
+.ql-editor{
+  
+  background: transparent !important;
+}
+.quill{
+  /* background: transparent !important; */
 }
 
-.ce-send-message-button {
+#ce-send-message-button {
+  background-color: #4050B5 !important;
 }
 
+
+.ce-send-button-container{
+
+} 
+#new-chat-plus-button{
+  background-color: #4050B5 !important;
+}
 /* styles chat feed bg */
 .ce-chat-feed-container {
   background:transparent !important;
@@ -93,6 +121,9 @@
 .ce-chat-list {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  padding: 1em !important;
+
+  
   
   
  
@@ -126,14 +157,18 @@ margin-top: 50px !important;
 .ce-settings {
   border-top-right-radius: 10px !important;
   border-bottom-right-radius: 10px !important;
-  background-color:black;
+  
+  padding: 1em !important;
 }
 
 .ce-settings-container {
   background:transparent !important;
   border-radius: 50px !important;
 }
-
+.ce-section-title-container{
+  border-radius: 10px !important;
+  background: transparent !important;
+}
 .ce-chat-settings-container {
   border-radius:10px !important;
   background-color:transparent !important;
@@ -143,7 +178,9 @@ margin-top: 50px !important;
 }
 
 .ce-chat-title-form {
+ 
 }
 
 .ce-photo-section {
+  border-radius: 10px !important;
 }
