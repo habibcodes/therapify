@@ -22,7 +22,6 @@ import ChatIcon from "@mui/icons-material/Chat";
 import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 import "./praccard.css";
 
-
 export default function PractitionerCard() {
   const [expanded, setExpanded] = React.useState(false);
   const [practitioners, setPractitioners] = useState([]);
@@ -77,8 +76,6 @@ export default function PractitionerCard() {
     return false;
   });
 
- 
-
   return (
     <div>
       <Box className="clickbox" sx={{ bgcolor: "background.paper" }}>
@@ -95,7 +92,6 @@ export default function PractitionerCard() {
             <h1 style={{ color: "#f0f0f0" }}>{searchTerm}</h1>
 
             {filteredPractitioners.map((practitioner, index) => (
-              
               <Card className="practitioner" style={{ color: "#f0f0f0" }}>
                 <CardHeader
                   avatar={
@@ -104,9 +100,12 @@ export default function PractitionerCard() {
                     //   anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
                     //   variant="dot"
                     //   >
-                    <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe" src="https://images.unsplash.com/photo-1541647376583-8934aaf3448a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGZhY2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60">
+                    <Avatar
+                      sx={{ bgcolor: red[500] }}
+                      aria-label="recipe"
+                      src="https://images.unsplash.com/photo-1541647376583-8934aaf3448a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGZhY2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                    >
                       {/* {`${practitioner.first_name[0]}${practitioner.last_name[0]}`} */}
-                      
                     </Avatar>
                   }
                   title={`${practitioner.first_name} ${practitioner.last_name}`}
@@ -115,15 +114,14 @@ export default function PractitionerCard() {
                 {/* </StyledBadge> */}
 
                 <CardActions disableSpacing>
-                  
+                  <IconButton aria-label="share">
+                    <EventAvailableIcon />
+                  </IconButton>
                   <IconButton aria-label="share">
                     <ChatIcon />
                   </IconButton>
                   <IconButton aria-label="share">
                     <VideocamIcon />
-                  </IconButton>
-                  <IconButton aria-label="share">
-                    <EventAvailableIcon />
                   </IconButton>
                   <ExpandMore
                     expand={practitioner.expanded}
@@ -141,10 +139,34 @@ export default function PractitionerCard() {
                   unmountOnExit
                 >
                   <CardContent>
-                    <Typography variant="h6" color="primary" fontWeight='bold'>Education</Typography>
                     <Typography paragraph>
-                      Get in contact:
-                      Email: {practitioner.email}
+                      {practitioner.information}
+                    </Typography>
+                    <Typography variant="h6" color="Primary" fontWeight="bold">
+                      Treatment Approach
+                    </Typography>
+                    <Typography paragraph>
+                      <b>Types of Therapy:</b> <br />
+                    </Typography>
+                    <Typography variant="h6" color="Primary" fontWeight="bold">
+                      Client Focus
+                    </Typography>
+                    <Typography paragraph>
+                      <b>Age Group:</b> <br />
+                    </Typography>
+                    <Typography variant="h6" color="Primary" fontWeight="bold">
+                      Finances
+                    </Typography>
+                    <Typography paragraph>
+                      <b>Cost per Session:</b> {practitioner.email} <br />
+                      <b>e-transfer to:</b> <br />
+                    </Typography>
+
+                    <Typography variant="h6" color="Primary" fontWeight="bold">
+                      Qualifications
+                    </Typography>
+                    <Typography paragraph>
+                      <b>School:</b> <br />
                     </Typography>
                   </CardContent>
                 </Collapse>
