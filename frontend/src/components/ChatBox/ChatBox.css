@@ -1,21 +1,21 @@
 /* -----------------------Main Wrapper------------------ */
 .ce-chat-engine {
-  background-color: orange;
+  background:transparent !important;
 }
 .ce-wrapper {
-  background-color: orange;
+  background:transparent !important;
 }
 
 /* -----------------Middle Column---------------------- */
-/* .ce-chat-feed-column {
-  background-color: tomato !important;
+.ce-chat-feed-column {
+  background-color: transparent !important;
   border-radius: 50px !important;
-} */
+}
 
-/* .ce-chat-feed {
-  background-color: tomato !important;
+.ce-chat-feed {
+  background-color: transparent !important;
   border-radius: 50px !important;
-} */
+}
 
 /* .ce-chat-title {
   background-color: tomato !important;
@@ -26,9 +26,12 @@
 }
 
 .ce-chat-title-container {
+  color:black;
+  border-radius: 10px;
 }
 
 .ce-chat-title-text {
+  
 }
 
 .ce-chat-subtitle-text {
@@ -61,6 +64,10 @@
 .ce-quil-container {
 }
 
+.ce-message-bubble{
+  
+}
+
 /* houses b/i/u/code/attachments options */
 .ql-toolbar ql-snow {
 }
@@ -70,7 +77,7 @@
 
 /* styles chat feed bg */
 .ce-chat-feed-container {
-  background-color: green !important;
+  background:transparent !important;
   /* border-radius: 50px !important; */
 }
 
@@ -84,17 +91,26 @@
 }
 
 .ce-chat-list {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  
+  
+ 
+  
 }
 
 .ce-chats-container {
-  background-color: green !important;
+  background-color: transparent !important;
   border-radius: 50px !important;
 }
 
 .ce-chat-form-container {
+  border-radius:15px;
+  background:transparent;
 }
 
 .ce-chat-card ce-active-chat-card {
+margin-top: 50px !important;
 }
 .ce-chat-list-mobile-options {
   background-color: tomato !important;
@@ -108,14 +124,19 @@
 }
 
 .ce-settings {
+  border-top-right-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
+  background-color:black;
 }
 
 .ce-settings-container {
-  background-color: green !important;
+  background:transparent !important;
   border-radius: 50px !important;
 }
 
-.ce-chat-settings-contaienr {
+.ce-chat-settings-container {
+  border-radius:10px !important;
+  background-color:transparent !important;
 }
 
 .ce-chat-avatars-row {
