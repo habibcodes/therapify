@@ -11,4 +11,7 @@ export default function Card() {
     </Box>
     // </div>
   );
+  
 }
+
+
