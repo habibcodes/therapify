@@ -103,7 +103,7 @@ export default function PractitionerCard() {
                     <Avatar
                       sx={{ bgcolor: red[500] }}
                       aria-label="recipe"
-                      src="https://images.unsplash.com/photo-1541647376583-8934aaf3448a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGZhY2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+                      src={practitioner.picture}
                     >
                       {/* {`${practitioner.first_name[0]}${practitioner.last_name[0]}`} */}
                     </Avatar>
@@ -146,27 +146,32 @@ export default function PractitionerCard() {
                       Treatment Approach
                     </Typography>
                     <Typography paragraph>
-                      <b>Types of Therapy:</b> <br />
+                      <b>Types of Therapy:</b> {practitioner.treatmenttype}{" "}
+                      <br />
                     </Typography>
                     <Typography variant="h6" color="Primary" fontWeight="bold">
                       Client Focus
                     </Typography>
                     <Typography paragraph>
-                      <b>Age Group:</b> <br />
+                      <b>Age Group: </b>
+                      {practitioner.clientfocus}
+                      <br />
                     </Typography>
                     <Typography variant="h6" color="Primary" fontWeight="bold">
                       Finances
                     </Typography>
                     <Typography paragraph>
-                      <b>Cost per Session:</b> {practitioner.email} <br />
-                      <b>e-transfer to:</b> <br />
+                      <b>Cost per Session:</b> {practitioner.cost} <br />
+                      <b>e-transfer to: </b>
+                      {practitioner.email} <br />
                     </Typography>
 
                     <Typography variant="h6" color="Primary" fontWeight="bold">
                       Qualifications
                     </Typography>
                     <Typography paragraph>
-                      <b>School:</b> <br />
+                      <b>School: </b>
+                      {practitioner.school} <br />
                     </Typography>
                   </CardContent>
                 </Collapse>
