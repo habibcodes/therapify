@@ -37,10 +37,10 @@
   border-radius: 5px;
   padding: 1em;
 }
-/* 
+
 .MuiBox-root {
   overflow: scroll;
-} */
+}
 
 @media only screen and (max-width: 1024px) {
   .dashbox {
