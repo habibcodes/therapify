@@ -135,7 +135,7 @@ export default function Login() {
               <Typography
               className="left-text"
               variant="h2">
-                With Therapify, you can improve lives.
+                With Therapify, you can help improve lives.
                 
                 
                 
