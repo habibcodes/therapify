@@ -107,7 +107,7 @@ export default function Login() {
                 fullWidth
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
-                component={Redirect} to='/dashboard'
+                component={Redirect} to='/pracdash'
                 color="secondary"
               >
                 Sign In
@@ -135,7 +135,7 @@ export default function Login() {
               <Typography
               className="left-text"
               variant="h2">
-                With Therapify, you will never walk alone.
+                With Therapify, you can help improve lives.
                 
                 
                 

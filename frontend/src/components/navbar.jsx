@@ -7,6 +7,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import './navbar.css'
 import { Link } from 'react-router-dom'
+import { SiTomorrowland } from 'react-icons/si'
 
 
 export default function ButtonAppBar() {
@@ -22,7 +23,7 @@ export default function ButtonAppBar() {
             
           >
             
-            <MenuIcon />
+            <SiTomorrowland size={'1.4em'} />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Therapify

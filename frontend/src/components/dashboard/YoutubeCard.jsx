@@ -28,7 +28,7 @@ export default function Card() {
 
   return (
     <div>
-      <Box className="clickbox" sx={{ bgcolor: "background.paper" }}>
+      <Box className="clickbox">
         <div>
           <form onSubmit={onSubmit}>
             <div className="form-controls">
@@ -44,9 +44,8 @@ export default function Card() {
         <br />
         <div className="filterVideos">{filteredVideos}</div>
 
-        <div></div>
+      
       </Box>
-      <div></div>
     </div>
   );
 }

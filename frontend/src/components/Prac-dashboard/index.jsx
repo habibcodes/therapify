@@ -1,7 +1,7 @@
 import Box from "@mui/material/Box";
 import "./dashboard.css";
 import VideocamIcon from "@mui/icons-material/Videocam";
-import YouTubeIcon from "@mui/icons-material/YouTube";
+
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
@@ -17,7 +17,7 @@ import CompletedCard from "./CompletedCard";
 import PatientsCard from "./PatientsCard";
 import VideoCard from "./VideoCard";
 import ChatCard from "./ChatCard";
-import YoutubeCard from "./YoutubeCard";
+
 
 import useVisualMode from "../../hooks/useVisualMode";
 
@@ -27,7 +27,7 @@ const COMPLETED = "COMPLETED";
 const PATIENT = "PATIENT";
 const VIDEO = "VIDEO";
 const CHAT = "CHAT";
-const YOUTUBE = "YOUTUBE";
+
 
 export default function Dashboard() {
   const { mode, transition } = useVisualMode(EMPTY);
@@ -50,7 +50,7 @@ export default function Dashboard() {
                       </ListItemIcon>
                       <ListItemText
                         className="itemtext"
-                        primary="Upcoming Sessions"
+                        primary="Appointment Requests"
                       />
                     </ListItemButton>
                   </ListItem>
@@ -92,7 +92,7 @@ export default function Dashboard() {
                       onClick={() => transition(mode === VIDEO ? EMPTY : VIDEO)}
                     >
                       <ListItemIcon>
-                        <VideocamIcon style={{ fill: "darkred" }} />
+                        <VideocamIcon style={{ fill: "black" }} />
                       </ListItemIcon>
                       <ListItemText
                         className="itemtext"
@@ -114,19 +114,7 @@ export default function Dashboard() {
                       />
                     </ListItemButton>
                   </ListItem>
-                  <Divider className="divider" />
-                  <ListItem>
-                    <ListItemButton
-                      onClick={() =>
-                        transition(mode === YOUTUBE ? EMPTY : YOUTUBE)
-                      }
-                    >
-                      <ListItemIcon>
-                        <YouTubeIcon style={{ fill: "red" }} />
-                      </ListItemIcon>
-                      <ListItemText className="itemtext" primary="Youtube" />
-                    </ListItemButton>
-                  </ListItem>
+                 
                 </List>
               </nav>
             </Box>
@@ -137,7 +125,7 @@ export default function Dashboard() {
             {mode === PATIENT && <PatientsCard />}
             {mode === VIDEO && <VideoCard />}
             {mode === CHAT && <ChatCard />}
-            {mode === YOUTUBE && <YoutubeCard />}
+            
           </Grid>
         </Grid>
       </Container>
