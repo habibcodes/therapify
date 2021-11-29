@@ -43,8 +43,6 @@ export default function Card() {
         </div>
         <br />
         <div className="filterVideos">{filteredVideos}</div>
-
-      
       </Box>
     </div>
   );
