@@ -191,8 +191,6 @@ export default function PractitionerCard() {
                     </Typography>
                     <Typography paragraph>
                       <b>Cost per Session:</b> {practitioner.cost} <br />
-                      <b>e-transfer to: </b>
-                      {practitioner.email} <br />
                     </Typography>
 
                     <Typography variant="h6" color="Primary" fontWeight="bold">
