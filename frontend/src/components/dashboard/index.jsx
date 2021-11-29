@@ -65,7 +65,7 @@ export default function Dashboard() {
                       </ListItemIcon>
                       <ListItemText
                         className="itemtext"
-                        primary="Patient Form"
+                        primary="Treatment Profile"
                       />
                     </ListItemButton>
                   </ListItem>
@@ -81,7 +81,7 @@ export default function Dashboard() {
                       </ListItemIcon>
                       <ListItemText
                         className="itemtext"
-                        primary="Appointments"
+                        primary="Request Appointment"
                       />
                     </ListItemButton>
                   </ListItem>

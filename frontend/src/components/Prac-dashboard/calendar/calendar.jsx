@@ -6,6 +6,7 @@ import {
   Scheduler,
   DayView,
   WeekView,
+  MonthView,
   Appointments,
   AppointmentTooltip,
   ViewSwitcher,
@@ -43,7 +44,7 @@ export default function SchedulerExample() {
     })
 
    
-    axios.get(`/api/patients`).then((res) => {
+    axios.get(`/api/practitioners`).then((res) => {
       const pracData = res.data;
     
       const filteredPracs = pracData.map((person) => ({
@@ -61,7 +62,7 @@ export default function SchedulerExample() {
   const resources = [
     {
       fieldName: "ownerId",
-      title: "Select Patient",
+      title: "Accept Appointment Request",
       instances: practitioners,
     },
   ];
@@ -132,15 +133,19 @@ export default function SchedulerExample() {
   return (
     <Scheduler className="scheduler" data={appointmentData}>
       <ViewState defaultCurrentDate={new Date()} />
-      <DayView
+      <MonthView
+      
+    />
+      
+      <WeekView
         startDayHour={8}
-        endDayHour={17}
+        endDayHour={24}
         cellDuration={60}
         timeTableCellComponent={TimeTableCell}
       />
-      <WeekView
+       <DayView
         startDayHour={8}
-        endDayHour={17}
+        endDayHour={24}
         cellDuration={60}
         timeTableCellComponent={TimeTableCell}
       />

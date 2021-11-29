@@ -6,6 +6,7 @@ import {
   Scheduler,
   DayView,
   WeekView,
+  MonthView,
   Appointments,
   AppointmentTooltip,
   ViewSwitcher,
@@ -132,15 +133,18 @@ export default function SchedulerExample() {
   return (
     <Scheduler className="scheduler" data={appointmentData}>
       <ViewState defaultCurrentDate={new Date()} />
-      <DayView
+      <MonthView
+      />
+      
+      <WeekView
         startDayHour={8}
-        endDayHour={17}
+        endDayHour={24}
         cellDuration={60}
         timeTableCellComponent={TimeTableCell}
       />
-      <WeekView
+      <DayView
         startDayHour={8}
-        endDayHour={17}
+        endDayHour={24}
         cellDuration={60}
         timeTableCellComponent={TimeTableCell}
       />
@@ -148,9 +152,10 @@ export default function SchedulerExample() {
       <EditingState onCommitChanges={(e) => commitChanges(e)} />
       <IntegratedEditing />
       <Appointments />
-      <Resources data={resources} />
+      
       <Toolbar />
       <DateNavigator />
+   
 
       <ViewSwitcher />
       <AppointmentTooltip showOpenButton showDeleteButton />
