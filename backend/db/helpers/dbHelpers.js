@@ -13,7 +13,7 @@ module.exports = (db) => {
 
   const getPatients = (email) => {
     const query = {
-      text: `SELECT patients.id, first_name, last_name, age, disease FROM users JOIN patients ON users.id = user_id`,
+      text: `SELECT patients.id, first_name, last_name, age, disease, available, picture, information, gender, city FROM users JOIN patients ON users.id = user_id`,
     };
     console.log(query);
 
