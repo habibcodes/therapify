@@ -6,7 +6,7 @@ CREATE TABLE practitioners(
     picture VARCHAR(255) NOT NULL,
     specialty VARCHAR(255) NOT NULL,
     verified BOOLEAN NOT NULL,
-    available BOOLEAN NOT NULL,
+    available SMALLINT,
     information VARCHAR(1000) NOT NULL,
     cost VARCHAR(255) NOT NULL,
     treatmenttype VARCHAR(255) NOT NULL,

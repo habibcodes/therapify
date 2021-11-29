@@ -1,7 +1,7 @@
 module.exports = (db) => {
   const getPractitioners = (email) => {
     const query = {
-      text: `SELECT practitioners.id, first_name, last_name, email, specialty, picture, information, cost, treatmenttype,clientfocus, school FROM users JOIN practitioners ON users.id = user_id`,
+      text: `SELECT practitioners.id, first_name, last_name, email, specialty, picture, information, cost, treatmenttype,clientfocus, school, available FROM users JOIN practitioners ON users.id = user_id`,
     };
     console.log(query);
 
