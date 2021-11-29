@@ -1,0 +1,73 @@
+# Therapify
+
+## Description
+Complete fullstack webapp built on React, websockets, WebRTC, YoutubeAPI v3, and Reactive Calander API to bridge the divide between remote patients in need of mental health services and the practitioners who are willing to provide it. 
+
+Therapify provides patients with the ability to browse uploaded media pertaining to CBT-based approaches to counseling. The video content is uploaded by practitioners specialising in a modality of treatment catering to diverse patient needs. Patients are able to search for Practitioners, request sessions on a particular date and time, and Practitioners are able to accept appointment requests. Sessions can be held over video chat or messaging, both of which are integrated on the platform. 
+
+Therapify ensures that no matter how remote a person is, they will only be a click away from accredited, world class mental health professionals. At Therapify, no matter what you're going through --you will never walk alone!
+
+## Features
+  - SPA design using React
+  - Data is persisted by API server using PostgreSQL database
+  - Client application communicates with API server via HTTP using JSON
+  - Full testing with 7 suites of 35 tests using Jest, as well as E2E testing
+    for complete user story via Cypress
+  - Users can:
+    - create, delete, and edit appointments
+    - get a real-time update of appointment availability
+    - click on available spots to add new appointments
+    - store and retrieve appointment schedules from the database
+    - search practitioners by name, speciality and availability
+    - 
+
+## Getting Started
+1. Install dependencies with `npm install`, in both the frontend and backend directories.
+2. Run servers using `npm start`.
+3. To run tests, `npm start`. **************??
+
+
+## Creating Appointment
+User can create an appointment, with the number of remaining appointment-spots updating dynamically. 
+
+!["creating appointmet"]()
+
+## Editing Appointment
+User can edit a previously saved appointment and resave it.
+
+!["editing appointmet"]()
+
+## Deleting Appointment
+User can delete an appointment, .... 
+
+!["deleting appointmet"]()
+
+## Error Handling
+User is presented with an error transition and message in the event that there is an issue with saving or deleting an appointment due to a server side malfunction. 
+
+!["error handling"]()
+
+## Technology Stack
+  - Front-end:
+    - Axios
+    - HTML/CSS/JS and JSX
+    - ReactJS
+    - Simple-Peer
+  - Back-end:
+    - Express
+    - NodeJS
+    - PostgreSQL
+    - Socket.io
+    - 
+
+## Testing Suite
+  - Cypress
+
+## Dependencies
+  - Axios
+ 
+
+## Dev Dependencies
+  - babel-loader: ^8.0.5
+
+
