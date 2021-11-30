@@ -4,7 +4,6 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 import './navbar.css'
 import { Link } from 'react-router-dom'
 import { SiTomorrowland } from 'react-icons/si'
@@ -28,7 +27,7 @@ export default function ButtonAppBar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Therapify
           </Typography >
-          
+          <Button component = {Link} to='/stack' color="inherit">About</Button>
           <Button component = {Link} to='/' color="inherit">Home</Button>
           
           <Button component = {Link} to='/login' color="inherit">Login</Button>

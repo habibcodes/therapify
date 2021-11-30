@@ -10,6 +10,7 @@ import Login from './components/Login';
 import PracLogin from './components/PracLogin'
 import { UserContext } from './components/UserContext';
 import { useState } from 'react';
+import StackCard from './components/StackList';
 import './App.css';
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
             <Route path='/pracdash' element={<PracDash />} />
             <Route path='/login' element={<Login />} />
             <Route path='/praclogin' element={<PracLogin />} />
+            <Route path='/stack' element={<StackCard />} />
           </Routes>
         </div>
       </UserContext.Provider>
