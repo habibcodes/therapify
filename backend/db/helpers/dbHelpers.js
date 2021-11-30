@@ -55,7 +55,7 @@ module.exports = (db) => {
   };
 
   const updateAppointment = (appointment, appointment_id) => {
-    console.log("++++++", appointment, appointment_id);
+    console.log('++++++', appointment, appointment_id);
     const query = {
       text: `UPDATE appointments SET title = $1, practitioner_id = $2, start_date = $3, end_date = $4
       WHERE id = $5`,
@@ -71,21 +71,21 @@ module.exports = (db) => {
     return db
       .query(query)
       .then((result) => result.rows[0])
-      .catch((err) => console.log("error=====", err));
+      .catch((err) => console.log('error=====', err));
   };
 
   const deleteAppointment = (appointment) => {
-    console.log("appointments delete=", appointment);
+    console.log('appointments delete=', appointment);
     const query = {
       text: `DELETE FROM appointments WHERE id = $1`,
       values: [appointment],
     };
-    console.log("delete query = ", query);
+    console.log('delete query = ', query);
     return db
       .query(query)
       .then((result) => {
         result.rows;
-        console.log("result.rows=", result.rows);
+        console.log('result.rows=', result.rows);
       })
       .catch((err) => err);
   };
