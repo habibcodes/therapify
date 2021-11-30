@@ -76,7 +76,10 @@ export default function Dashboard() {
                       <ListItemIcon>
                         <VideocamIcon style={{ fill: 'black' }} />
                       </ListItemIcon>
-                      <ListItemText className='itemtext' primary='Video Chat' />
+                      <ListItemText
+                        className='itemtext'
+                        primary='Video Session'
+                      />
                     </ListItemButton>
                   </ListItem>
                   <Divider className='divider' />
@@ -86,7 +89,10 @@ export default function Dashboard() {
                       <ListItemIcon>
                         <ChatIcon style={{ fill: 'black' }} />
                       </ListItemIcon>
-                      <ListItemText className='itemtext' primary='Live Chat' />
+                      <ListItemText
+                        className='itemtext'
+                        primary='Chat Session'
+                      />
                     </ListItemButton>
                   </ListItem>
                   <Divider className='divider' />

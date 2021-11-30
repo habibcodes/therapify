@@ -13,7 +13,6 @@ import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import EventAvailableIcon from '@mui/icons-material/EventAvailable';
 import { Container, Grid, Divider } from '@mui/material';
 import CalendarCard from './CalendarCard';
-import CompletedCard from './CompletedCard';
 import PatientsCard from './PatientsCard';
 import VideoCard from './VideoCard';
 import ChatCard from './ChatCard';
@@ -22,7 +21,6 @@ import useVisualMode from '../../hooks/useVisualMode';
 
 const EMPTY = 'EMPTY';
 const CALENDAR = 'CALENDAR';
-const COMPLETED = 'COMPLETED';
 const PATIENT = 'PATIENT';
 const VIDEO = 'VIDEO';
 const CHAT = 'CHAT';
@@ -48,21 +46,6 @@ export default function Dashboard() {
                       <ListItemText
                         className='itemtext'
                         primary='Appointment Requests'
-                      />
-                    </ListItemButton>
-                  </ListItem>
-                  <Divider className='divider' />
-                  <ListItem>
-                    <ListItemButton
-                      onClick={() =>
-                        transition(mode === COMPLETED ? EMPTY : COMPLETED)
-                      }>
-                      <ListItemIcon>
-                        <EventAvailableIcon style={{ fill: 'black' }} />
-                      </ListItemIcon>
-                      <ListItemText
-                        className='itemtext'
-                        primary='Completed Sessions'
                       />
                     </ListItemButton>
                   </ListItem>
@@ -115,7 +98,6 @@ export default function Dashboard() {
           </Grid>
           <Grid item lg>
             {mode === CALENDAR && <CalendarCard className='calendar-card' />}
-            {mode === COMPLETED && <CompletedCard />}
             {mode === PATIENT && <PatientsCard />}
             {mode === VIDEO && <VideoCard />}
             {mode === CHAT && <ChatCard />}

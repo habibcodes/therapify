@@ -127,7 +127,12 @@ export default function SchedulerExample() {
   return (
     <Scheduler className='scheduler' data={appointmentData}>
       <ViewState defaultCurrentDate={new Date()} />
-      <MonthView />
+      <DayView
+        startDayHour={8}
+        endDayHour={24}
+        cellDuration={60}
+        timeTableCellComponent={TimeTableCell}
+      />
 
       <WeekView
         startDayHour={8}
@@ -135,12 +140,8 @@ export default function SchedulerExample() {
         cellDuration={60}
         timeTableCellComponent={TimeTableCell}
       />
-      <DayView
-        startDayHour={8}
-        endDayHour={24}
-        cellDuration={60}
-        timeTableCellComponent={TimeTableCell}
-      />
+
+      <MonthView />
 
       <EditingState onCommitChanges={(e) => commitChanges(e)} />
       <IntegratedEditing />
