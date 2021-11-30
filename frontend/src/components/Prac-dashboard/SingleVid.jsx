@@ -1,17 +1,12 @@
-import { Box } from "@mui/system";
-import "./singlevid.css";
+import './singlevid.css';
 
 export default function SingleVid(props) {
   return (
     <iframe
-      className="singleVideo"
-      id="player"
-      type="text/html"
-      // width="640"
-      // height="390"
-      // style={{ padding-right: 5px }}
+      className='singleVideo'
+      id='player'
+      type='text/html'
       src={props.src}
-      frameBorder="0"
-    ></iframe>
+      frameBorder='0'></iframe>
   );
 }

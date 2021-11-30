@@ -1,4 +1,3 @@
-
 export const appointments = [
   {
     title: 'Example appointment structure',
@@ -6,11 +5,5 @@ export const appointments = [
     endDate: new Date(2021, 5, 25, 11, 30),
     id: 0,
     location: 'Room 1',
-  }
-    
+  },
 ];
-
-
-
-
-

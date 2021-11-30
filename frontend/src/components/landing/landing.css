@@ -1,10 +1,9 @@
-body{
-  
-  display:flex;
+body {
+  display: flex;
   justify-content: center;
 }
 
-#background-video{
+#background-video {
   filter: brightness(70%);
   object-fit: cover;
   width: 100vw;
@@ -15,17 +14,14 @@ body{
   z-index: -1;
 }
 
-
-h2{
-  
-  color:white;
+h2 {
+  color: white;
   text-align: center;
   margin-top: 30vh;
-  
 }
 
-.mainBox{
-  margin-top:20vh;
-  display:flex;
+.mainBox {
+  margin-top: 20vh;
+  display: flex;
   justify-content: center;
 }
