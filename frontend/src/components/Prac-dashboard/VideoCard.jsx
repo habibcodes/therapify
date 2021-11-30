@@ -4,10 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 // videoChat imports
 import VideoPlayer from '../VideoChat/VideoPlayer';
 
-
 const useStyles = makeStyles((theme) => ({
-
-  
   image: {
     marginLeft: '15px',
   },
@@ -15,28 +12,14 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-   
   },
-  
 }));
 export default function Card() {
   const classes = useStyles();
   return (
-    
-        
-    <Box className="clickbox" >
-    
-       
-        
-        {/* vidPlayer */}
-        <VideoPlayer />
-       
-   
-     
-      </Box>
-      
-
-
-   
-  )
+    <Box className='clickbox'>
+      {/* vidPlayer */}
+      <VideoPlayer />
+    </Box>
+  );
 }

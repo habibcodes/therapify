@@ -6,12 +6,20 @@ import './ChatBox.css';
 export default function ChatBox() {
   const user = useContext(UserContext);
   const userType = {
+    // Patient: {
+    //   userName: 'Bob',
+    //   userSecret: 'test',
+    // },
+    // Practitioner: {
+    //   userName: 'Dr. Bob',
+    //   userSecret: 'test',
+    // },
     Patient: {
-      userName: 'Bob',
+      userName: 'Batman',
       userSecret: 'test',
     },
     Practitioner: {
-      userName: 'Dr. Bob',
+      userName: 'Joker',
       userSecret: 'test',
     },
   };

@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from 'axios';
 export const getPatients = () => {
-  return axios.get("/api/patients").then((res) => res.data);
+  return axios.get('/api/patients').then((res) => res.data);
 };

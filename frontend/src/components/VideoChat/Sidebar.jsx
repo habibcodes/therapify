@@ -17,33 +17,25 @@ import Tooltip from '@mui/material/Tooltip';
 import { purple, green } from '@mui/material/colors';
 import { styled } from '@mui/material/styles';
 
-
 import { SocketContext } from '../../Context';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
-    
   },
-  gridContainer: {
-    
-   
-  },
+  gridContainer: {},
   container: {
     position: 'fixed',
-    bottom: 5
-    
+    bottom: 5,
   },
- 
+
   padding: {
     display: 'flex',
     padding: 5,
-    justifyContent: 'space-between'
-  
+    justifyContent: 'space-between',
   },
   marginBot: {
-    marginBot: 5
-    
+    marginBot: 5,
   },
 }));
 const ColorButton = styled(Button)(({ theme }) => ({
@@ -82,94 +74,73 @@ const Sidebar = ({ children }) => {
 
   return (
     <Container className={classes.container}>
-      <Notifications/>
-     
-      
-        <form className={classes.root} noValidate autoComplete='off'>
-          {/* xxxxxxxxxxxxx */}
+      <Notifications />
+
+      <form className={classes.root} noValidate autoComplete='off'>
+        {/* xxxxxxxxxxxxx */}
+        <Grid container className={classes.padding}>
+          <Grid item xs={12} md={6} className={classes.padding}>
+            <TextField
+              label='Name'
+              value={name}
+              fullWidth
+              onChange={(e) => setName(e.target.value)}
+            />
+          </Grid>
+          {/* xxxxxxxxxx */}
+          <Grid item xs={12} md={6} className={classes.padding}>
+            <TextField
+              label='ID to Call'
+              value={idToCall}
+              fullWidth
+              onChange={(e) => setIdToCall(e.target.value)}
+            />
+          </Grid>
           <Grid container className={classes.padding}>
-            <Grid item xs={12} md={6} className={classes.padding}>
-              
-              <TextField
-                label='Name'
-                value={name}
-                fullWidth
-                
-                onChange={(e) => setName(e.target.value)}
-                
-              />
-             
-            
-            </Grid>
-            {/* xxxxxxxxxx */}
-            <Grid item xs={12} md={6} className={classes.padding}>
-            
-              <TextField
-                label='ID to Call'
-                value={idToCall}
-                fullWidth
-                onChange={(e) => setIdToCall(e.target.value)}
-               
-              />
-            
-            
-            </Grid>
-            <Grid container className={classes.padding}>
-            <Tooltip title="Turn camera on/off">
+            <Tooltip title='Turn camera on/off'>
               <ColorButton
-              variant='contained'
-              color='primary'
-              
+                variant='contained'
+                color='primary'
                 onClick={() => {
                   setVideoState(!videoState);
                 }}>
-                {videoState ? <VideocamOffIcon/> : <VideocamIcon/>}{''}
+                {videoState ? <VideocamOffIcon /> : <VideocamIcon />}
+                {''}
               </ColorButton>
-              </Tooltip>
-              {callAccepted && !callEnded ? (
-                <Tooltip title="End call">
+            </Tooltip>
+            {callAccepted && !callEnded ? (
+              <Tooltip title='End call'>
                 <Button
                   variant='contained'
                   color='secondary'
-                  
-                
                   onClick={leaveCall}
                   className={classes.margin}>
-                <PhoneDisabled/>
+                  <PhoneDisabled />
                 </Button>
-                </Tooltip>
-              ) : (
-                <Tooltip title="Call with ID">
+              </Tooltip>
+            ) : (
+              <Tooltip title='Call with ID'>
                 <GreenButton
                   variant='contained'
                   color='primary'
-                
                   // fullWidth
                   onClick={() => callUser(idToCall)}
                   className={classes.margin}>
-                 <Phone />
+                  <Phone />
                 </GreenButton>
-                </Tooltip>
-                
-                
-              )}
-                <CopyToClipboard text={me} className={classes.margin}>
-                  <Tooltip title="Copy your ID">
-                <ColorButton
-                  variant='contained'
-                  color='primary'
-                  
-                  
-                >
+              </Tooltip>
+            )}
+            <CopyToClipboard text={me} className={classes.margin}>
+              <Tooltip title='Copy your ID'>
+                <ColorButton variant='contained' color='primary'>
                   <Assignment />
                 </ColorButton>
-                </Tooltip>
-              </CopyToClipboard>
-            </Grid>
+              </Tooltip>
+            </CopyToClipboard>
           </Grid>
-        </form>
-        {children}
-    
+        </Grid>
+      </form>
+      {children}
     </Container>
   );
 };
