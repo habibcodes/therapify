@@ -4,17 +4,10 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-<<<<<<< HEAD
 import './navbar.css'
 import { Link } from 'react-router-dom'
 import { SiTomorrowland } from 'react-icons/si'
 
-=======
-import MenuIcon from '@mui/icons-material/Menu';
-import './navbar.css';
-import { Link } from 'react-router-dom';
-import { SiTomorrowland } from 'react-icons/si';
->>>>>>> origin/master
 
 export default function ButtonAppBar() {
   return (
