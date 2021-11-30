@@ -21,13 +21,11 @@ Therapify ensures that no matter how remote a person is, they will only be a cli
   - click on available spots to add new appointments
   - store and retrieve appointment schedules from the database
   - search practitioners by name, speciality and availability
-  -
 
 ## Getting Started
 
 1. Install dependencies with `npm install`, in both the frontend and backend directories.
-2. Run servers using `npm start`.
-3. To run tests, `npm start`. ******\*\*******??
+2. Run `npm start` from both the frontend and backend directories.
 
 ## Creating, Updating, Deleting Appointment Requests
 
@@ -44,7 +42,7 @@ Patient and Practitioner can have a therapy session over live chat. Participants
 
 ## Search Practitioners
 
-Patients can search for a Practitioner, see their details and rates, and proceed to request an appointmetn.
+Patients can search for a Practitioner, see their details and rates, and proceed to request an appointment.
 
 !["search practitioner"](https://github.com/habibcodes/therapify/blob/master/images/search.gif?raw=true)
 
@@ -54,7 +52,7 @@ Patient can receive therapy sessions via live video link by placing a call to th
 
 !["video session"](https://github.com/habibcodes/therapify/blob/master/images/video.gif?raw=true)
 
-## Patient Counseling Self Help Content Search
+## Patient Counselling Self Help Content Search
 
 Patient can search for and browse content uploaded by Practitioner to YouTube and query via the YouTube Data v3 API. This feature is catered more towards self-help therapy for those Patients/users who do not request either Chat or Video therapy sessions.
 
@@ -69,11 +67,17 @@ Patient can search for and browse content uploaded by Practitioner to YouTube an
   - Axios
   - CSS
   - JSX
+  - Calender API
 
 - Back-end:
   - Express
   - NodeJS
   - PostgreSQL
+  - YouTube Data API v3
+  - ChatEngine
+  - WebRTC
+  - Socket.io
+  - Simple-peer
 
 ## Dependencies
 
@@ -117,7 +121,8 @@ Patient can search for and browse content uploaded by Practitioner to YouTube an
 
 ## Dev Dependencies
 
-- babel-loader: ^8.0.5
+- Nodemon
+- Morgan
 
 ## Developers
 
